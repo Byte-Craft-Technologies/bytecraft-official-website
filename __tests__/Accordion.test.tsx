@@ -1,0 +1,59 @@
+import "@testing-library/jest-dom"
+import {screen, render, fireEvent, waitFor,} from "@testing-library/react";
+import Accordion from "@/components/Accordion";
+
+describe("Accordion", () => {
+    const items = [
+        {title: "title 1", content: "Content 1"},
+        {title: "title 2", content: "Content 2"}
+    ];
+    beforeEach(() => {
+        render(<Accordion titleColor ={"text-slate-600"} contentColor={"text-slate-600"} items={items} bgColor="bg-white" hover="bg-gray-100"/>);
+    });
+
+
+    it("has the correct classes", () => {
+        const div = screen.getByTestId("accordion-0");
+        expect(div).toHaveClass("bg-white");
+        expect(div).toHaveClass("hover:bg-gray-100");
+    });
+    it("expands  on click", async () => {
+        const button = screen.getByText(/title 1/i);
+
+        fireEvent.click(button);
+        await waitFor(async () => {
+            const content = await screen.findByText(/Content 1/i);
+            expect(content).toBeInTheDocument();
+            expect(content).toHaveClass("text-slate-600")
+        });
+
+        expect(screen.queryByText(/Content 2/i)).not.toBeInTheDocument();
+    });
+
+    it("collapse on click two times", async () => {
+
+        const button = screen.getByText(/title 1/i);
+        fireEvent.click(button);
+        fireEvent.click(button);
+
+        expect(button).toHaveClass("font-bold","text-slate-600")
+        await waitFor(async () => {
+            const content = await screen.findByText(/Content 1/i);
+            expect(content).not.toBeInTheDocument();
+        });
+    });
+
+    it("collapse on click other item click", async () => {
+
+        const button1 = screen.getByText(/title 1/i);
+        const button = screen.getByText(/title 2/i);
+
+        fireEvent.click(button1);
+        fireEvent.click(button);
+
+        await waitFor(async () => {
+            const content = await screen.findByText(/Content 1/i);
+            expect(content).not.toBeInTheDocument();
+        });
+    });
+})
