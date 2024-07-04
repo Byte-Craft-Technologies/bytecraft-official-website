@@ -41,13 +41,12 @@ export default function NavBar() {
                     <ChevronDown fill="#8987A1" size={16} height={16} width={16} className="mx-1 mt-1.5" />
                   </Link>
                   {submenuVisibility[link.name] && (
-                    <div className="flex flex-col absolute bg-white shadow-slate-200 shadow-xl mt-1">
+                    <div className="flex flex-col absolute bg-white shadow-slate-200 shadow-xl mt-1 px-10 py-5">
                       {link.submenu.map((subItem) => (
-                        <div key={subItem.name} >
-                          <div className='my-2 w-auto mx-5'>
+                        <div key={subItem.name} className='justify-center' >
+                          <div className='my-3 w-auto'>
                             <Link href={subItem.href} onClick={() => handleLinkClick(subItem.name)}>{subItem.name}</Link>
                           </div>
-                          <hr className="h-px bg-gray-200 border-0 dark:bg-gray-400"></hr>
                         </div>
                       ))}
                     </div>
@@ -64,7 +63,7 @@ export default function NavBar() {
             name="Devis"
             link="#"
             borderStyle="rounded-xl px-8"
-            fontStyle="font-se text-base"
+            fontStyle="font-se text-sm"
             bgColor="bg-primary"
             textColor="text-white"
           />
