@@ -1,10 +1,11 @@
 import NavBar from "../app/ui/Navbar";
 import Card from "./components/card";
+import About from "./ui/About";
 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-between p-10 bg-[#F5F5F5]">
+    <main className="flex min-h-screen flex-col justify-between p-10 bg-default">
       <NavBar />
       <Card
         title="Prêt à propulser votre Business vers de nouveaux sommets de croissance ?"
@@ -15,6 +16,7 @@ export default function Home() {
       />
       <div className="flex flex-col items-center justify-center space-y-8">
       </div>
+      <About/>
     </main>
   );
 }

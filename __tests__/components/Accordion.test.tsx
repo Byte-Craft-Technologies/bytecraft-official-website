@@ -1,6 +1,7 @@
+import Accordion from "@/app/components/Accordion";
 import "@testing-library/jest-dom"
 import {screen, render, fireEvent, waitFor,} from "@testing-library/react";
-import Accordion from "@/components/Accordion";
+
 
 describe("Accordion", () => {
     const items = [

@@ -11,13 +11,17 @@ const config: Config = {
       fontFamily: {
         "inter": ["Inter", "sans-serif"]
       },
+      backgroundColor:{
+        "default":"#F5F5F5"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors:{
-        'primary': '#5EA1D6'
+        "primary": "#5EA1D6",
+        "secondary":"#8DBCE2"
       }
     },
   },

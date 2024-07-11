@@ -1,6 +1,6 @@
-'use client'
-import { useState } from 'react';
-import { Transition } from '@headlessui/react';
+"use client"
+import { useState } from "react";
+import { Transition } from "@headlessui/react";
 interface Item{
     title:string;
     content:string;
@@ -37,8 +37,7 @@ interface Item{
                         enterTo="transform scale-100 opacity-100"
                         leave="transition duration-100 ease-out"
                         leaveFrom="transform scale-100 opacity-100"
-                        leaveTo="transform scale-95 opacity-0"
-                    >
+                        leaveTo="transform scale-95 opacity-0">
                         <div className={`px-4 py-2 ${contentColor} text-[16px]`}>
                             {item.content}
                         </div>
