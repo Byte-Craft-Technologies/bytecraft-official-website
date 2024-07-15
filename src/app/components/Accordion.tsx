@@ -9,21 +9,20 @@ interface Item{
  const Accordion=({ items, bgColor,hover, titleColor,contentColor }:{
      items:Item[],
      bgColor:string,
-     hover:string,
+     hover?:string,
      titleColor:string,
      contentColor:string
  })=> {
     const [openIndex, setOpenIndex] = useState(-1);
 
     return (
-        <div className="w-full max-w-md p-2">
+        <div className="w-full  p-2">
             {items.map((item, index) => (
-                <div key={index} data-testId={`accordion-${index}`} className={`border-b   ${bgColor} hover:${hover} mb-2 rounded-lg font-inter`}>
+                <div key={index} data-testId={`accordion-${index}`} className={`border-b  ${bgColor} ${hover?"hover:"+hover:""} mb-2 rounded-lg font-inter p-4 `}>
                     <button
-                        className="w-full px-4 py-2 text-left flex justify-between items-center"
+                        className=" px-4 py-2 text-left flex justify-between w-full"
                         onClick={() => setOpenIndex(openIndex === index ? -1 : index)}>
-                        <span className={`font-bold text-xl ${titleColor}`}>{item.title}</span>
-
+                        <span className={`font-bold text-lg ${titleColor} whitespace-nowrap `}>{item.title}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
                             {openIndex === index ?
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" /> : <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />

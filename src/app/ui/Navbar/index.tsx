@@ -33,7 +33,7 @@ export default function NavBar() {
       <div className='flex items-baseline'>
         <nav className="pt-2 pb-6 grid grid-cols-3 mx-24 justify-around">
           {links.map((link) => (
-            <div key={link.name} className={`w-full pr-8 ${selectedLink === link.name ? 'text-black' : 'text-[#8987A1]'}`}>
+            <div key={link.name} className={`w-full pr-8 ${selectedLink === link.name ? 'text-black' : 'text-navLinkActive'}`}>
               {link.submenu ? (
                 <div className='text-[#8987A1] pr-6'>
                   <Link href="#" onClick={() => { toggleSubmenu(link.name); handleLinkClick(link.name); }} className='flex flex-wrap'>

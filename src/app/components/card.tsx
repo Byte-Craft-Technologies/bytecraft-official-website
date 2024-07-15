@@ -24,11 +24,11 @@ const Card: React.FC<CardProps> = ({ title, description, image, link, buttonText
         <div className={`${inter.className} grid grid-cols-2 shadow-slate-100 shadow-sm text-[#0C0C0C]`}>
             <div className='flex flex-col w-full mx-10'>
                 <div className='items-center justify-center mx-10'>
-                    <h1 className='text-5xl font-bold text-[#5EA1D6] w-4/6 leading-snug'>{title}</h1>
+                    <h1 className='text-5xl font-bold text-primary w-4/6 leading-snug'>{title}</h1>
                     <p className='text-lg mt-5 w-4/6 leading-snug'>{description}</p>
                 </div>
                 <div className='mt-10 items-start w-fit mx-10'>
-                    <Button icon='/arrow-right.png' name={buttonText} link={link} borderStyle='rounded-xl px-8' fontStyle='font-se text-sm' bgColor='bg-[#5EA1D6]' textColor='text-[#FBFBFB]' />
+                    <Button icon='/arrow-right.png' name={buttonText} link={link} borderStyle='rounded-xl px-8' fontStyle='font-se text-sm' bgColor='bg-primary' textColor='text-customWhite' />
                     <div className="mx-10 mt-5">
                         <SlideDots totalDots={3} activeDot={0} />
                     </div>
