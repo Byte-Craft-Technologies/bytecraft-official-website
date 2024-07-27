@@ -1,5 +1,6 @@
 import NavBar from "../app/ui/Navbar";
 import Card from "./components/card";
+import FAQ from "./ui/FAQ";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       />
       <div className="flex flex-col items-center justify-center space-y-8">
       </div>
+        <FAQ/>
     </main>
   );
 }
