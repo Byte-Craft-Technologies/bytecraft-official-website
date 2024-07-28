@@ -1,4 +1,4 @@
-import Accordion from '@/app/components/Accordion';
+import Accordion from '@/app/components/accordion';
 import React from 'react';
 import Image from "next/image";
 

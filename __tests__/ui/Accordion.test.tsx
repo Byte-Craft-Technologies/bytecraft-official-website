@@ -1,4 +1,4 @@
-import Accordion from "@/app/components/Accordion";
+import Accordion from "@/app/components/accordion";
 import "@testing-library/jest-dom"
 import {screen, render, fireEvent, waitFor,} from "@testing-library/react";
 
