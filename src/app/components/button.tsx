@@ -10,16 +10,32 @@ interface ButtonProps {
     icon?: string;
     bgColor: string;
     textColor: string;
-    hoverColor?:string;
+    hoverColor?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({name, link, borderStyle, fontStyle, icon, bgColor, textColor,hoverColor}) => {
+const Button: React.FC<ButtonProps> = ({ name, link, borderStyle, fontStyle, icon, bgColor, textColor, hoverColor }) => {
     return (
-        <a href={link}
-            className={`border text-xl flex font-inter hover:${hoverColor} ${bgColor} ${borderStyle} ${fontStyle} ${textColor}  px-4 py-2`}>
-            {icon && <Image src={icon}
-                            className=" mr-2" width={30} height={30} alt=""/>}
-            <span className="mx-auto my-auto">{name}</span>
+        <a
+            href={link}
+            className={`
+                inline-flex items-center justify-center gap-2
+                transition-all duration-300 ease-out
+                transform hover:scale-105 active:scale-95
+                ${bgColor} ${borderStyle} ${fontStyle} ${textColor}
+                ${hoverColor ? `hover:${hoverColor}` : ''}
+                shadow-lg hover:shadow-xl
+            `}
+        >
+            <span>{name}</span>
+            {icon && (
+                <Image
+                    src={icon}
+                    className="transition-transform group-hover:translate-x-1"
+                    width={20}
+                    height={20}
+                    alt=""
+                />
+            )}
         </a>
     )
 }
