@@ -8,7 +8,7 @@
     "cta": "Demander un devis"
   },
   "hero": {
-    "badge": "Innovation & Excellence",
+    "badge": "Disponible pour nouveaux projets",
     "title1": "Transformez vos idées en",
     "title2": "solutions digitales",
     "description": "Nous concevons et développons des applications web et mobiles sur mesure pour propulser votre entreprise vers le succès.",
@@ -16,7 +16,7 @@
     "cta2": "Voir nos réalisations",
     "stats": {
       "projects": "Projets livrés",
-      "satisfaction": "Satisfaction client",
+      "satisfaction": "Clients satisfaits",
       "experience": "Années d'expérience"
     }
   },
@@ -62,16 +62,37 @@
     "ctaButton": "Discutons de votre projet"
   },
   "realisations": {
-    "badge": "Nos Réalisations",
-    "title": "Projets récents",
-    "description": "Découvrez quelques-uns de nos projets qui illustrent notre savoir-faire et notre approche qualité.",
+    "badge": "Portfolio",
+    "title": "Nos Réalisations",
+    "description": "Découvrez quelques-uns de nos projets qui témoignent de notre expertise et de notre engagement envers l'excellence.",
     "viewProject": "Voir le projet",
-    "viewStore": "Voir sur le store"
+    "viewStore": "Voir sur le store",
+    "ctaText": "Vous avez un projet en tête ?",
+    "ctaButton": "Discutons de votre projet",
+    "project1": {
+      "title": "Le Béret Rouge",
+      "category": "Site Web",
+      "description": "Site vitrine élégant pour une entreprise française. Design moderne, responsive et optimisé pour le SEO."
+    },
+    "project2": {
+      "title": "Ojami",
+      "category": "Application Mobile",
+      "description": "Application mobile innovante disponible sur Google Play Store. Architecture robuste avec un backend sécurisé."
+    },
+    "project3": {
+      "title": "Commune d'Avrankou",
+      "category": "Site Web",
+      "description": "Site officiel de la commune d'Avrankou. Interface moderne pour informer les citoyens et promouvoir la région."
+    }
   },
   "faq": {
     "badge": "FAQ",
-    "title": "Questions fréquentes",
-    "description": "Retrouvez les réponses aux questions les plus courantes sur nos services.",
+    "title": "Questions fréquemment posées",
+    "description": "Trouvez rapidement les réponses à vos questions. Si vous ne trouvez pas ce que vous cherchez, n'hésitez pas à nous contacter.",
+    "responseTime": "Temps de réponse moyen",
+    "contactTitle": "Vous avez d'autres questions ?",
+    "contactDescription": "Notre équipe est là pour vous aider",
+    "contactButton": "Contactez-nous",
     "questions": {
       "q1": "Quels types de projets réalisez-vous ?",
       "a1": "Nous développons des sites web, applications mobiles, systèmes backend et solutions IA. Du site vitrine à l'application complexe.",
@@ -85,10 +106,7 @@
       "a5": "Oui, nous proposons des contrats de maintenance incluant mises à jour, corrections et support technique.",
       "q6": "Comment obtenir un devis ?",
       "a6": "Via notre formulaire de contact ou par email. Nous analysons votre besoin et vous envoyons une proposition sous 48h."
-    },
-    "contactTitle": "Vous avez d'autres questions ?",
-    "contactDescription": "Notre équipe est disponible pour répondre à toutes vos questions.",
-    "contactButton": "Nous contacter"
+    }
   },
   "contact": {
     "badge": "Contact",
