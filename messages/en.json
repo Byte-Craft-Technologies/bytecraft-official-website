@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "realisations": "Portfolio",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Get a quote"
+  },
+  "hero": {
+    "badge": "Innovation & Excellence",
+    "title1": "Transform your ideas into",
+    "title2": "digital solutions",
+    "description": "We design and develop custom web and mobile applications to propel your business towards success.",
+    "cta1": "Start a project",
+    "cta2": "View our work",
+    "stats": {
+      "projects": "Projects delivered",
+      "satisfaction": "Client satisfaction",
+      "experience": "Years of experience"
+    }
+  },
+  "services": {
+    "badge": "Our Services",
+    "title": "Custom digital solutions",
+    "description": "From design to production, we support you at every stage of your digital project with an agile approach.",
+    "web": {
+      "title": "Web Development",
+      "description": "Modern, performant and responsive websites and web applications.",
+      "details": ["Corporate websites", "Complex web applications", "E-commerce & marketplaces", "Dashboards & back-office"]
+    },
+    "mobile": {
+      "title": "Mobile Applications",
+      "description": "Native and cross-platform applications for iOS and Android.",
+      "details": ["iOS & Android apps", "Cross-platform (React Native)", "API & services integration", "Push notifications & offline"]
+    },
+    "backend": {
+      "title": "Backend & APIs",
+      "description": "Robust architectures and secure APIs for your applications.",
+      "details": ["RESTful & GraphQL APIs", "Microservices", "Databases", "Security & authentication"]
+    },
+    "ai": {
+      "title": "Artificial Intelligence",
+      "description": "AI solutions integration to automate and optimize your processes.",
+      "details": ["Intelligent chatbots", "Automation", "LLMs integration"]
+    },
+    "consulting": {
+      "title": "Consulting & Specifications",
+      "description": "Support in defining and specifying your needs.",
+      "details": ["Needs analysis", "Requirements writing", "Technical architecture", "Technology choices"]
+    },
+    "deploy": {
+      "title": "Deployment & DevOps",
+      "description": "Production deployment and maintenance of your applications.",
+      "details": ["Cloud deployment", "CI/CD pipelines", "Maintenance & support"]
+    },
+    "techTitle": "Technologies we master",
+    "techDescription": "A modern and proven tech stack",
+    "agileTitle": "Agile Methodology",
+    "agileDescription": "Sprints, iterations, continuous delivery",
+    "ctaText": "Need a custom service?",
+    "ctaButton": "Let's discuss your project"
+  },
+  "realisations": {
+    "badge": "Our Work",
+    "title": "Recent projects",
+    "description": "Discover some of our projects that illustrate our expertise and quality approach.",
+    "viewProject": "View project",
+    "viewStore": "View on store"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently asked questions",
+    "description": "Find answers to the most common questions about our services.",
+    "questions": {
+      "q1": "What types of projects do you work on?",
+      "a1": "We develop websites, mobile applications, backend systems and AI solutions. From showcase sites to complex applications.",
+      "q2": "What are your main technologies?",
+      "a2": "Java/Spring Boot, React/Next.js, React Native, Python, and cloud tools like AWS, Docker, Vercel.",
+      "q3": "How does a project work?",
+      "a3": "Needs analysis, technical proposal, agile sprint development, testing and production deployment with follow-up.",
+      "q4": "What are your average timelines?",
+      "a4": "From 2-4 weeks for a showcase site to several months for a complex application. We establish a precise schedule.",
+      "q5": "Do you offer maintenance?",
+      "a5": "Yes, we offer maintenance contracts including updates, fixes and technical support.",
+      "q6": "How to get a quote?",
+      "a6": "Via our contact form or by email. We analyze your needs and send you a proposal within 48h."
+    },
+    "contactTitle": "Have more questions?",
+    "contactDescription": "Our team is available to answer all your questions.",
+    "contactButton": "Contact us"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Let's discuss your project",
+    "description": "Ready to transform your ideas into reality? Contact us to discuss your project and get a personalized quote.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Location",
+    "followUs": "Follow us",
+    "responseTime": "Quick response",
+    "responseTimeDesc": "Within 24 business hours",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "projectType": "Project type",
+      "budget": "Estimated budget",
+      "message": "Describe your project",
+      "messagePlaceholder": "Tell us about your project, your goals, your constraints...",
+      "submit": "Send my request",
+      "sending": "Sending...",
+      "successTitle": "Message sent!",
+      "successMessage": "We will respond to you as soon as possible.",
+      "select": "Select...",
+      "projectTypes": {
+        "web": "Website",
+        "mobile": "Mobile Application",
+        "webapp": "Web Application",
+        "api": "Backend / API",
+        "consulting": "Consulting",
+        "other": "Other"
+      }
+    }
+  }
+}

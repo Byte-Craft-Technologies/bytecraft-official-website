@@ -4,19 +4,22 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { inter } from '../fonts';
 import Button from '../../components/button';
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/16/solid";
-
-const links = [
-    { name: 'Accueil', href: '#' },
-    { name: 'Services', href: '#', submenu: [{ name: 'Service 1', href: '#' }, { name: 'Service 2', href: '#' }] },
-    { name: 'Réalisations', href: '#' },
-    { name: 'Contact', href: '#' },
-];
+import LanguageSwitcher from '../../components/LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
 export default function NavBar() {
-    const [selectedLink, setSelectedLink] = useState<string | null>('Accueil');
+    const t = useTranslations('nav');
+    const [selectedLink, setSelectedLink] = useState<string | null>('home');
     const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const links = [
+        { key: 'home', href: '#' },
+        { key: 'services', href: '#services' },
+        { key: 'realisations', href: '#realisations' },
+        { key: 'faq', href: '#faq' },
+        { key: 'contact', href: '#contact' },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,8 +29,9 @@ export default function NavBar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleLinkClick = (name: string) => {
-        setSelectedLink(name);
+    const handleLinkClick = (key: string) => {
+        setSelectedLink(key);
+        setMobileMenuOpen(false);
     };
 
     return (
@@ -56,53 +60,79 @@ export default function NavBar() {
                 {/* Navigation Links */}
                 <nav className="hidden md:flex items-center gap-1">
                     {links.map((link) => (
-                        <div key={link.name} className="relative">
-                            {link.submenu ? (
-                                <Menu as="div" className="relative">
-                                    <MenuButton
-                                        className="px-4 py-2 rounded-lg flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors">
-                                        {link.name}
-                                        <ChevronDownIcon className="w-4 h-4" />
-                                    </MenuButton>
-                                    <MenuItems
-                                        className="absolute top-full left-0 mt-2 w-48 rounded-xl bg-[#0d1525] border border-white/10 p-2 shadow-xl shadow-black/50 focus:outline-none backdrop-blur-xl">
-                                        {link.submenu.map((sub, index) => (
-                                            <MenuItem key={index}>
-                                                <Link
-                                                    className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-300 hover:bg-white/5 hover:text-cyan-400 transition-colors"
-                                                    href={sub.href}>
-                                                    {sub.name}
-                                                </Link>
-                                            </MenuItem>
-                                        ))}
-                                    </MenuItems>
-                                </Menu>
-                            ) : (
-                                <Link
-                                    href={link.href}
-                                    onClick={() => handleLinkClick(link.name)}
-                                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors block ${
-                                        selectedLink === link.name
-                                            ? 'text-cyan-400'
-                                            : 'text-gray-300 hover:text-cyan-400'
-                                    }`}>
-                                    {link.name}
-                                </Link>
-                            )}
-                        </div>
+                        <Link
+                            key={link.key}
+                            href={link.href}
+                            onClick={() => handleLinkClick(link.key)}
+                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                                selectedLink === link.key
+                                    ? 'text-cyan-400'
+                                    : 'text-gray-300 hover:text-cyan-400'
+                            }`}>
+                            {t(link.key)}
+                        </Link>
                     ))}
                 </nav>
 
-                {/* CTA Button */}
-                <Button
-                    name="Demander un devis"
-                    link="#"
-                    borderStyle="rounded-full px-6 py-2.5"
-                    fontStyle="text-sm font-semibold"
-                    bgColor="bg-gradient-to-r from-cyan-500 to-primary hover:shadow-lg hover:shadow-cyan-500/20"
-                    textColor="text-white"
-                />
+                {/* Right side: Language Switcher + CTA */}
+                <div className="hidden md:flex items-center gap-4">
+                    <LanguageSwitcher />
+                    <Button
+                        name={t('cta')}
+                        link="#contact"
+                        borderStyle="rounded-full px-6 py-2.5"
+                        fontStyle="text-sm font-semibold"
+                        bgColor="bg-gradient-to-r from-cyan-500 to-primary hover:shadow-lg hover:shadow-cyan-500/20"
+                        textColor="text-white"
+                    />
+                </div>
+
+                {/* Mobile menu button */}
+                <button
+                    className="md:hidden p-2 text-white"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {mobileMenuOpen ? (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        ) : (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        )}
+                    </svg>
+                </button>
             </div>
+
+            {/* Mobile menu */}
+            {mobileMenuOpen && (
+                <div className="md:hidden bg-[#0a0a1a]/95 backdrop-blur-md border-t border-white/5">
+                    <nav className="px-6 py-4 flex flex-col gap-2">
+                        {links.map((link) => (
+                            <Link
+                                key={link.key}
+                                href={link.href}
+                                onClick={() => handleLinkClick(link.key)}
+                                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                                    selectedLink === link.key
+                                        ? 'text-cyan-400 bg-white/5'
+                                        : 'text-gray-300 hover:text-cyan-400'
+                                }`}>
+                                {t(link.key)}
+                            </Link>
+                        ))}
+                        <div className="pt-4 flex items-center justify-between">
+                            <LanguageSwitcher />
+                            <Button
+                                name={t('cta')}
+                                link="#contact"
+                                borderStyle="rounded-full px-4 py-2"
+                                fontStyle="text-sm font-semibold"
+                                bgColor="bg-gradient-to-r from-cyan-500 to-primary"
+                                textColor="text-white"
+                            />
+                        </div>
+                    </nav>
+                </div>
+            )}
         </header>
     );
 }

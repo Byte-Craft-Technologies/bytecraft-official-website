@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "realisations": "Réalisations",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Demander un devis"
+  },
+  "hero": {
+    "badge": "Innovation & Excellence",
+    "title1": "Transformez vos idées en",
+    "title2": "solutions digitales",
+    "description": "Nous concevons et développons des applications web et mobiles sur mesure pour propulser votre entreprise vers le succès.",
+    "cta1": "Démarrer un projet",
+    "cta2": "Voir nos réalisations",
+    "stats": {
+      "projects": "Projets livrés",
+      "satisfaction": "Satisfaction client",
+      "experience": "Années d'expérience"
+    }
+  },
+  "services": {
+    "badge": "Nos Services",
+    "title": "Solutions digitales sur mesure",
+    "description": "De la conception à la mise en production, nous vous accompagnons à chaque étape de votre projet digital avec une approche agile.",
+    "web": {
+      "title": "Développement Web",
+      "description": "Sites web et applications web modernes, performants et responsive.",
+      "details": ["Sites vitrines & corporate", "Applications web complexes", "E-commerce & marketplaces", "Tableaux de bord & back-office"]
+    },
+    "mobile": {
+      "title": "Applications Mobiles",
+      "description": "Applications natives et cross-platform pour iOS et Android.",
+      "details": ["Applications iOS & Android", "Cross-platform (React Native)", "Intégration APIs & services", "Push notifications & offline"]
+    },
+    "backend": {
+      "title": "Backend & APIs",
+      "description": "Architectures robustes et APIs sécurisées pour vos applications.",
+      "details": ["APIs RESTful & GraphQL", "Microservices", "Bases de données", "Sécurité & authentification"]
+    },
+    "ai": {
+      "title": "Intelligence Artificielle",
+      "description": "Intégration de solutions IA pour automatiser et optimiser vos processus.",
+      "details": ["Chatbots intelligents", "Automatisation", "Intégration LLMs"]
+    },
+    "consulting": {
+      "title": "Conseil & Spécifications",
+      "description": "Accompagnement dans la définition et la spécification de vos besoins.",
+      "details": ["Analyse des besoins", "Rédaction de cahiers des charges", "Architecture technique", "Choix technologiques"]
+    },
+    "deploy": {
+      "title": "Déploiement & DevOps",
+      "description": "Mise en production et maintenance de vos applications.",
+      "details": ["Déploiement cloud", "CI/CD pipelines", "Maintenance & support"]
+    },
+    "techTitle": "Technologies maîtrisées",
+    "techDescription": "Un stack technique moderne et éprouvé",
+    "agileTitle": "Méthodologie Agile",
+    "agileDescription": "Sprints, itérations, livraisons continues",
+    "ctaText": "Besoin d'un service sur mesure ?",
+    "ctaButton": "Discutons de votre projet"
+  },
+  "realisations": {
+    "badge": "Nos Réalisations",
+    "title": "Projets récents",
+    "description": "Découvrez quelques-uns de nos projets qui illustrent notre savoir-faire et notre approche qualité.",
+    "viewProject": "Voir le projet",
+    "viewStore": "Voir sur le store"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Questions fréquentes",
+    "description": "Retrouvez les réponses aux questions les plus courantes sur nos services.",
+    "questions": {
+      "q1": "Quels types de projets réalisez-vous ?",
+      "a1": "Nous développons des sites web, applications mobiles, systèmes backend et solutions IA. Du site vitrine à l'application complexe.",
+      "q2": "Quelles sont vos technologies principales ?",
+      "a2": "Java/Spring Boot, React/Next.js, React Native, Python, et les outils cloud AWS, Docker, Vercel.",
+      "q3": "Comment se déroule un projet ?",
+      "a3": "Analyse des besoins, proposition technique, développement en sprints agiles, tests et mise en production avec suivi.",
+      "q4": "Quels sont vos délais moyens ?",
+      "a4": "De 2-4 semaines pour un site vitrine à plusieurs mois pour une application complexe. Nous établissons un planning précis.",
+      "q5": "Proposez-vous la maintenance ?",
+      "a5": "Oui, nous proposons des contrats de maintenance incluant mises à jour, corrections et support technique.",
+      "q6": "Comment obtenir un devis ?",
+      "a6": "Via notre formulaire de contact ou par email. Nous analysons votre besoin et vous envoyons une proposition sous 48h."
+    },
+    "contactTitle": "Vous avez d'autres questions ?",
+    "contactDescription": "Notre équipe est disponible pour répondre à toutes vos questions.",
+    "contactButton": "Nous contacter"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Discutons de votre projet",
+    "description": "Prêt à transformer vos idées en réalité ? Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Localisation",
+    "followUs": "Suivez-nous",
+    "responseTime": "Réponse rapide",
+    "responseTimeDesc": "Sous 24h ouvrées",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "company": "Entreprise",
+      "projectType": "Type de projet",
+      "budget": "Budget estimé",
+      "message": "Décrivez votre projet",
+      "messagePlaceholder": "Parlez-nous de votre projet, vos objectifs, vos contraintes...",
+      "submit": "Envoyer ma demande",
+      "sending": "Envoi en cours...",
+      "successTitle": "Message envoyé !",
+      "successMessage": "Nous vous répondrons dans les plus brefs délais.",
+      "select": "Sélectionnez...",
+      "projectTypes": {
+        "web": "Site Web",
+        "mobile": "Application Mobile",
+        "webapp": "Application Web",
+        "api": "Backend / API",
+        "consulting": "Conseil",
+        "other": "Autre"
+      }
+    }
+  }
+}
