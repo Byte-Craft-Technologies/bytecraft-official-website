@@ -1,25 +1,32 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import ParticleBackground from './ParticleBackground';
 import NavBar from '../ui/Navbar';
 import Button from './button';
+import HeroVisual from './HeroVisual';
 
 const slides = [
   {
     title: "Propulsez votre Business",
     subtitle: "vers de nouveaux sommets",
     description: "Nous transformons vos idées en solutions numériques innovantes. Sites web, applications, et stratégies digitales sur mesure.",
-    imageUrl: "/hero-image-1.png",
+    visual: 'tech' as const,
     link: "#contact",
   },
   {
-    title: "Innovation & Excellence",
-    subtitle: "au service de votre croissance",
-    description: "Notre expertise technique et créative vous accompagne dans votre transformation digitale avec des solutions performantes.",
-    imageUrl: "/hero-image-2.png",
+    title: "Applications Mobiles",
+    subtitle: "performantes & intuitives",
+    description: "Des applications mobiles modernes qui offrent une expérience utilisateur exceptionnelle sur iOS et Android.",
+    visual: 'mobile' as const,
     link: "#services",
+  },
+  {
+    title: "Sites Web Modernes",
+    subtitle: "qui convertissent",
+    description: "Des sites web élégants, rapides et optimisés pour transformer vos visiteurs en clients fidèles.",
+    visual: 'web' as const,
+    link: "#realisations",
   },
 ];
 
@@ -113,41 +120,23 @@ const Hero = () => {
               {/* Stats */}
               <div className="flex gap-10 pt-8 border-t border-white/10">
                 <div>
-                  <div className="text-3xl font-bold text-white">50+</div>
+                  <div className="text-3xl font-bold text-white">3</div>
                   <div className="text-gray-400 text-sm">Projets livrés</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white">98%</div>
+                  <div className="text-3xl font-bold text-white">100%</div>
                   <div className="text-gray-400 text-sm">Clients satisfaits</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white">5+</div>
+                  <div className="text-3xl font-bold text-white">2</div>
                   <div className="text-gray-400 text-sm">Années d&apos;expérience</div>
                 </div>
               </div>
             </div>
 
-            {/* Image */}
-            <div className={`relative flex items-center justify-center transition-all duration-700 ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-primary/20 rounded-full blur-3xl scale-75" />
-
-              {/* Tech circles */}
-              <div className="absolute w-[450px] h-[450px] border border-cyan-500/10 rounded-full" />
-              <div className="absolute w-[380px] h-[380px] border border-primary/20 rounded-full animate-spin-slow" />
-              <div className="absolute w-[300px] h-[300px] border border-cyan-400/10 rounded-full animate-spin-reverse" />
-
-              {/* Hero Image */}
-              <div className="relative z-10">
-                <Image
-                  src={currentSlide.imageUrl}
-                  width={550}
-                  height={550}
-                  alt="Hero illustration"
-                  className="drop-shadow-2xl"
-                  priority
-                />
-              </div>
+            {/* Visual */}
+            <div className={`relative flex items-center justify-center min-h-[400px] transition-all duration-700 ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+              <HeroVisual variant={currentSlide.visual} />
             </div>
           </div>
         </div>
