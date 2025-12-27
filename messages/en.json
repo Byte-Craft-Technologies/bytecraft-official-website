@@ -131,6 +131,7 @@
       "sending": "Sending...",
       "successTitle": "Message sent!",
       "successMessage": "We will respond to you as soon as possible.",
+      "error": "An error occurred. Please try again or contact us directly by email.",
       "select": "Select...",
       "projectTypes": {
         "web": "Website",
