@@ -73,23 +73,23 @@ const Hero = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className={`space-y-8 transition-all duration-700 ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Badge */}
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-cyan-500/20 backdrop-blur-sm">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse mr-3"></span>
-                  <span className="text-cyan-300/90 text-sm font-medium">{t('badge')}</span>
+                <div className="inline-flex items-center px-4 py-2 rounded-full glass-enhanced border-neon glow-neon-cyan">
+                  <span className="w-2 h-2 rounded-full bg-neon-cyan animate-pulse mr-3"></span>
+                  <span className="text-neon-cyan text-caption font-regular">{t('badge')}</span>
                 </div>
 
                 {/* Title */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                <h1 className="text-display font-semibold text-light leading-tight">
                   {t('title1')}
-                  <span className="block mt-2 bg-gradient-to-r from-cyan-400 via-primary to-cyan-400 bg-clip-text text-transparent">
+                  <span className="block mt-2 text-gradient-aurora">
                     {t('title2')}
                   </span>
                 </h1>
 
                 {/* Description */}
-                <p className="text-lg text-gray-300 max-w-xl leading-relaxed">
+                <p className="text-body font-regular text-light-300 max-w-xl leading-relaxed">
                   {t('description')}
                 </p>
               </div>
@@ -100,34 +100,34 @@ const Hero = () => {
                   name={t('cta1')}
                   link={currentSlide.link}
                   borderStyle="rounded-full px-8 py-4"
-                  fontStyle="text-base font-semibold"
-                  bgColor="bg-gradient-to-r from-cyan-500 to-primary hover:shadow-lg hover:shadow-cyan-500/25"
-                  textColor="text-white"
+                  fontStyle="text-body font-semibold"
+                  bgColor="bg-gradient-to-r from-neon-cyan to-neon-blue shadow-neon-cyan hover:shadow-neon-blue"
+                  textColor="text-dark-950"
                 />
                 <a
                   href="#realisations"
-                  className="group flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white hover:border-cyan-400/50 hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
+                  className="group flex items-center gap-2 px-8 py-4 rounded-full border-neon-animated text-light hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
                 >
-                  <span className="font-medium">{t('cta2')}</span>
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="text-body font-semibold">{t('cta2')}</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
               </div>
 
               {/* Stats */}
-              <div className="flex gap-10 pt-8 border-t border-white/10">
+              <div className="flex gap-8 pt-8 border-t border-light/10">
                 <div>
-                  <div className="text-3xl font-bold text-white">3</div>
-                  <div className="text-gray-400 text-sm">{t('stats.projects')}</div>
+                  <div className="text-heading font-semibold text-light">3</div>
+                  <div className="text-caption font-regular text-light-400">{t('stats.projects')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white">100%</div>
-                  <div className="text-gray-400 text-sm">{t('stats.satisfaction')}</div>
+                  <div className="text-heading font-semibold text-light">100%</div>
+                  <div className="text-caption font-regular text-light-400">{t('stats.satisfaction')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white">2</div>
-                  <div className="text-gray-400 text-sm">{t('stats.experience')}</div>
+                  <div className="text-heading font-semibold text-light">2</div>
+                  <div className="text-caption font-regular text-light-400">{t('stats.experience')}</div>
                 </div>
               </div>
             </div>
@@ -148,8 +148,8 @@ const Hero = () => {
             onClick={() => goToSlide(index)}
             className={`transition-all duration-300 rounded-full ${
               index === activeSlide
-                ? 'w-10 h-3 bg-gradient-to-r from-cyan-400 to-primary'
-                : 'w-3 h-3 bg-white/30 hover:bg-white/50'
+                ? 'w-10 h-3 bg-gradient-to-r from-neon-cyan to-neon-blue shadow-neon-cyan'
+                : 'w-3 h-3 bg-light/30 hover:bg-neon-cyan/50 hover:shadow-neon-cyan'
             }`}
           />
         ))}
@@ -157,8 +157,8 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
-        <div className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-1.5">
-          <div className="w-1 h-2.5 bg-cyan-400 rounded-full animate-bounce" />
+        <div className="w-6 h-10 rounded-full border-2 border-neon-cyan/20 flex items-start justify-center p-2">
+          <div className="w-1 h-2 bg-neon-cyan rounded-full animate-bounce shadow-neon-cyan" />
         </div>
       </div>
     </section>
