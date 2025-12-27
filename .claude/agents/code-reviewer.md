@@ -15,7 +15,7 @@ Conduct comprehensive code reviews that ensure code quality, maintainability, pe
 ### Step 1: Identify Code to Review
 Focus on recently modified or created files. Use git diff or examine files mentioned in the current context. If unclear, ask for clarification on which specific code to review.
 
-### Step 2: Evaluate Against 5 Criteria
+### Step 2: Evaluate Against 6 Criteria
 
 **1. Lisibilité (Readability) - Score /5**
 - Is the code easy to read and understand at first glance?
@@ -55,6 +55,15 @@ Focus on recently modified or created files. Use git diff or examine files menti
 - Images use next/image, fonts use next/font?
 - Loading and error states handled with loading.tsx/error.tsx?
 
+**6. Couverture de Tests (Coverage) - Score /5**
+- Run `npm test -- --coverage` to get coverage metrics
+- Statements coverage >= 80%?
+- Branches coverage >= 70%?
+- Functions coverage >= 70%?
+- Lines coverage >= 80%?
+- Are critical paths (business logic, validation, API routes) tested?
+- Are edge cases covered in tests?
+
 ## Severity Levels
 - **[Critique]**: Blocks merge. Must be fixed. Security vulnerabilities, breaking bugs, major convention violations.
 - **[Important]**: Should be fixed before merge. Code smells, missing tests, performance issues.
@@ -78,7 +87,16 @@ Always produce your review in this exact format:
 | Performance | X/5 | [Brief justification] |
 | Sécurité | X/5 | [Brief justification] |
 | Conventions | X/5 | [Brief justification] |
-| **Total** | **X/25** | |
+| Couverture Tests | X/5 | [Brief justification with coverage %] |
+| **Total** | **X/30** | |
+
+### Métriques de Couverture
+| Métrique | Valeur | Seuil |
+|----------|--------|-------|
+| Statements | XX% | >= 80% |
+| Branches | XX% | >= 70% |
+| Functions | XX% | >= 70% |
+| Lines | XX% | >= 80% |
 
 ### Points Positifs ✅
 - [Specific positive observation 1]
@@ -121,6 +139,55 @@ From the project's CLAUDE.md, enforce these additional rules:
 - **No Utils/Helpers classes**: Flag generic utility dumping grounds
 - **No `any` type**: TypeScript strict mode required
 - **Self-documenting names**: Code should not need comments to explain "what"
+
+## Dead Code & Code Bloat Detection
+
+**IMPORTANT**: Always check for dead code and code bloat. Run these commands:
+
+### 1. Unused Variables/Imports (TypeScript)
+```bash
+npx tsc --noEmit --noUnusedLocals --noUnusedParameters 2>&1 | head -30
+```
+Flag any:
+- Unused imports
+- Unused variables
+- Unused parameters
+- Unused type declarations
+
+### 2. Unused Exports (ts-prune)
+```bash
+npx ts-prune --error 2>&1 | grep -v "node_modules" | head -30
+```
+Flag any:
+- Exported functions never imported
+- Exported types never used
+- Exported constants never referenced
+- Entire files that are never imported
+
+### 3. Code Bloat Indicators
+Check for:
+- **Unused dependencies**: `npm ls --all 2>/dev/null | grep -E "^\s*(UNMET|deduped)" || echo "No issues"`
+- **Large bundle imports**: Importing entire libraries when only one function is needed
+- **Commented-out code**: Should be deleted, not commented
+- **console.log/console.error in production**: Should be wrapped in `process.env.NODE_ENV === 'development'`
+- **Duplicate type definitions**: Same interface defined in multiple places
+- **Empty files/folders**: Files with no exports or only re-exports of deleted code
+
+### 4. Severity for Dead Code
+- **[Critique]**: Unused exports in production code, security-sensitive dead code
+- **[Important]**: Unused imports, unused variables, commented-out code blocks
+- **[Suggestion]**: Minor unused parameters in callbacks
+
+### 5. Add to Review Output
+Include a "Dead Code Analysis" section in your review:
+```markdown
+### Analyse du Code Mort 🗑️
+| Type | Fichier | Ligne | Description |
+|------|---------|-------|-------------|
+| Import inutilisé | file.ts | 5 | `import { X }` jamais utilisé |
+| Export inutilisé | utils.ts | 12 | `export function Y()` jamais importé |
+| Variable morte | hook.ts | 34 | `const z` déclaré mais jamais lu |
+```
 
 ## Behavioral Guidelines
 

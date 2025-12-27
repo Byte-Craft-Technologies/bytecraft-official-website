@@ -1,11 +1,22 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { validateContactForm } from '@/domain/usecases/validateContactForm';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+
+    // Server-side validation (CRITICAL: never trust client-side validation alone)
+    const validation = validateContactForm(body);
+    if (!validation.valid) {
+      return NextResponse.json(
+        { error: 'Validation failed', details: validation.errors },
+        { status: 400 }
+      );
+    }
+
     const { name, email, phone, company, projectType, budget, currency, message } = body;
 
     // Map project types to readable names
@@ -138,7 +149,9 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Resend error:', error);
+      }
       return NextResponse.json(
         { error: 'Failed to send email' },
         { status: 500 }
@@ -147,7 +160,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('API error:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('API error:', error);
+    }
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
