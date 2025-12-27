@@ -50,30 +50,47 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const [error, setError] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setSubmitted(true);
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        projectType: '',
-        budget: '',
-        currency: 'FCFA',
-        message: '',
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitted(true);
+
+      // Reset after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          projectType: '',
+          budget: '',
+          currency: 'FCFA',
+          message: '',
+        });
+      }, 5000);
+    } catch {
+      setError(t('form.error'));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCurrencyChange = (currency: string) => {
@@ -318,6 +335,12 @@ const Contact = () => {
                       placeholder={t('form.messagePlaceholder')}
                     />
                   </div>
+
+                  {error && (
+                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                      {error}
+                    </div>
+                  )}
 
                   <button
                     type="submit"

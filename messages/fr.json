@@ -131,6 +131,7 @@
       "sending": "Envoi en cours...",
       "successTitle": "Message envoyé !",
       "successMessage": "Nous vous répondrons dans les plus brefs délais.",
+      "error": "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement par email.",
       "select": "Sélectionnez...",
       "projectTypes": {
         "web": "Site Web",
