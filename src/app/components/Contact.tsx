@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 const Contact = () => {
+  const t = useTranslations('contact');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -88,13 +90,13 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-4">
-            Contact
+            {t('badge')}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Discutons de votre projet
+            {t('title')}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Prêt à transformer vos idées en réalité ? Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.
+            {t('description')}
           </p>
         </div>
 
@@ -107,7 +109,7 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-cyan-500 to-primary flex items-center justify-center text-white text-xl mb-4">
                   📧
                 </div>
-                <h3 className="text-white font-semibold mb-1">Email</h3>
+                <h3 className="text-white font-semibold mb-1">{t('email')}</h3>
                 <a href="mailto:bytecraft.technologies@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
                   bytecraft.technologies@gmail.com
                 </a>
@@ -117,7 +119,7 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center text-white text-xl mb-4">
                   📱
                 </div>
-                <h3 className="text-white font-semibold mb-1">WhatsApp</h3>
+                <h3 className="text-white font-semibold mb-1">{t('whatsapp')}</h3>
                 <a href="https://wa.me/0601147224" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors">
                   +33 601147224
                 </a>
@@ -127,14 +129,14 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-500 flex items-center justify-center text-white text-xl mb-4">
                   📍
                 </div>
-                <h3 className="text-white font-semibold mb-1">Localisation</h3>
+                <h3 className="text-white font-semibold mb-1">{t('location')}</h3>
                 <p className="text-gray-400">Porto-novo, Bénin</p>
               </div>
             </div>
 
             {/* Social links */}
             <div className="pt-6 border-t border-white/10">
-              <h3 className="text-white font-semibold mb-4">Suivez-nous</h3>
+              <h3 className="text-white font-semibold mb-4">{t('followUs')}</h3>
               <div className="flex gap-3">
                 <a href="#" className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -161,8 +163,8 @@ const Contact = () => {
                   ⚡
                 </div>
                 <div>
-                  <div className="text-white font-medium">Réponse rapide</div>
-                  <div className="text-gray-400 text-sm">Sous 24h ouvrées</div>
+                  <div className="text-white font-medium">{t('responseTime')}</div>
+                  <div className="text-gray-400 text-sm">{t('responseTimeDesc')}</div>
                 </div>
               </div>
             </div>
@@ -176,15 +178,15 @@ const Contact = () => {
                   <div className="w-20 h-20 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center text-white text-4xl mx-auto mb-6">
                     ✓
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Message envoyé !</h3>
-                  <p className="text-gray-400">Nous vous répondrons dans les plus brefs délais.</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">{t('form.successTitle')}</h3>
+                  <p className="text-gray-400">{t('form.successMessage')}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
-                        Nom complet *
+                        {t('form.name')} *
                       </label>
                       <input
                         type="text"
@@ -198,7 +200,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
-                        Email *
+                        {t('form.email')} *
                       </label>
                       <input
                         type="email"
@@ -215,7 +217,7 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
-                        Téléphone
+                        {t('form.phone')}
                       </label>
                       <input
                         type="tel"
@@ -228,7 +230,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
-                        Entreprise
+                        {t('form.company')}
                       </label>
                       <input
                         type="text"
@@ -236,7 +238,7 @@ const Contact = () => {
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                        placeholder="Votre entreprise"
+                        placeholder="Your company"
                       />
                     </div>
                   </div>
@@ -244,7 +246,7 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
-                        Type de projet *
+                        {t('form.projectType')} *
                       </label>
                       <select
                         name="projectType"
@@ -253,28 +255,28 @@ const Contact = () => {
                         required
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
                       >
-                        <option value="" className="bg-gray-900">Sélectionnez...</option>
-                        <option value="web" className="bg-gray-900">Site Web</option>
-                        <option value="mobile" className="bg-gray-900">Application Mobile</option>
-                        <option value="webapp" className="bg-gray-900">Application Web</option>
-                        <option value="api" className="bg-gray-900">Backend / API</option>
-                        <option value="consulting" className="bg-gray-900">Conseil</option>
-                        <option value="other" className="bg-gray-900">Autre</option>
+                        <option value="" className="bg-gray-900">{t('form.select')}</option>
+                        <option value="web" className="bg-gray-900">{t('form.projectTypes.web')}</option>
+                        <option value="mobile" className="bg-gray-900">{t('form.projectTypes.mobile')}</option>
+                        <option value="webapp" className="bg-gray-900">{t('form.projectTypes.webapp')}</option>
+                        <option value="api" className="bg-gray-900">{t('form.projectTypes.api')}</option>
+                        <option value="consulting" className="bg-gray-900">{t('form.projectTypes.consulting')}</option>
+                        <option value="other" className="bg-gray-900">{t('form.projectTypes.other')}</option>
                       </select>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
-                        Budget estimé
+                        {t('form.budget')}
                       </label>
-                      <div className="flex gap-2">
+                      <div className="flex flex-col gap-2">
                         {/* Currency selector */}
-                        <div className="flex rounded-xl bg-white/5 border border-white/10 p-1">
+                        <div className="flex rounded-xl bg-white/5 border border-white/10 p-1 w-fit">
                           {currencies.map((curr) => (
                             <button
                               key={curr.code}
                               type="button"
                               onClick={() => handleCurrencyChange(curr.code)}
-                              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                              className={`px-2 py-1.5 rounded-lg text-xs font-medium transition-all ${
                                 formData.currency === curr.code
                                   ? 'bg-cyan-500 text-white'
                                   : 'text-gray-400 hover:text-white'
@@ -289,9 +291,9 @@ const Contact = () => {
                           name="budget"
                           value={formData.budget}
                           onChange={handleChange}
-                          className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors text-sm"
                         >
-                          <option value="" className="bg-gray-900">Sélectionnez...</option>
+                          <option value="" className="bg-gray-900">{t('form.select')}</option>
                           {budgetRanges[formData.currency as keyof typeof budgetRanges].map((range) => (
                             <option key={range.value} value={range.value} className="bg-gray-900">
                               {range.label}
@@ -304,7 +306,7 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Décrivez votre projet *
+                      {t('form.message')} *
                     </label>
                     <textarea
                       name="message"
@@ -313,7 +315,7 @@ const Contact = () => {
                       required
                       rows={5}
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors resize-none"
-                      placeholder="Parlez-nous de votre projet, vos objectifs, vos contraintes..."
+                      placeholder={t('form.messagePlaceholder')}
                     />
                   </div>
 
@@ -332,10 +334,10 @@ const Contact = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
-                        Envoi en cours...
+                        {t('form.sending')}
                       </span>
                     ) : (
-                      'Envoyer ma demande'
+                      t('form.submit')
                     )}
                   </button>
                 </form>

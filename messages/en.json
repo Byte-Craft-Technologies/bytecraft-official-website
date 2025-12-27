@@ -8,7 +8,7 @@
     "cta": "Get a quote"
   },
   "hero": {
-    "badge": "Innovation & Excellence",
+    "badge": "Available for new projects",
     "title1": "Transform your ideas into",
     "title2": "digital solutions",
     "description": "We design and develop custom web and mobile applications to propel your business towards success.",
@@ -27,7 +27,7 @@
     "web": {
       "title": "Web Development",
       "description": "Modern, performant and responsive websites and web applications.",
-      "details": ["Corporate websites", "Complex web applications", "E-commerce & marketplaces", "Dashboards & back-office"]
+      "details": ["Corporate & showcase sites", "Complex web applications", "E-commerce & marketplaces", "Dashboards & back-office"]
     },
     "mobile": {
       "title": "Mobile Applications",
@@ -62,16 +62,37 @@
     "ctaButton": "Let's discuss your project"
   },
   "realisations": {
-    "badge": "Our Work",
-    "title": "Recent projects",
-    "description": "Discover some of our projects that illustrate our expertise and quality approach.",
+    "badge": "Portfolio",
+    "title": "Our Work",
+    "description": "Discover some of our projects that demonstrate our expertise and commitment to excellence.",
     "viewProject": "View project",
-    "viewStore": "View on store"
+    "viewStore": "View on store",
+    "ctaText": "Have a project in mind?",
+    "ctaButton": "Let's discuss your project",
+    "project1": {
+      "title": "Le Béret Rouge",
+      "category": "Website",
+      "description": "Elegant showcase website for a French company. Modern, responsive design optimized for SEO."
+    },
+    "project2": {
+      "title": "Ojami",
+      "category": "Mobile App",
+      "description": "Innovative mobile application available on Google Play Store. Robust architecture with secure backend."
+    },
+    "project3": {
+      "title": "Avrankou Municipality",
+      "category": "Website",
+      "description": "Official website of Avrankou municipality. Modern interface to inform citizens and promote the region."
+    }
   },
   "faq": {
     "badge": "FAQ",
-    "title": "Frequently asked questions",
-    "description": "Find answers to the most common questions about our services.",
+    "title": "Frequently Asked Questions",
+    "description": "Quickly find answers to your questions. If you can't find what you're looking for, don't hesitate to contact us.",
+    "responseTime": "Average response time",
+    "contactTitle": "Have more questions?",
+    "contactDescription": "Our team is here to help you",
+    "contactButton": "Contact us",
     "questions": {
       "q1": "What types of projects do you work on?",
       "a1": "We develop websites, mobile applications, backend systems and AI solutions. From showcase sites to complex applications.",
@@ -85,10 +106,7 @@
       "a5": "Yes, we offer maintenance contracts including updates, fixes and technical support.",
       "q6": "How to get a quote?",
       "a6": "Via our contact form or by email. We analyze your needs and send you a proposal within 48h."
-    },
-    "contactTitle": "Have more questions?",
-    "contactDescription": "Our team is available to answer all your questions.",
-    "contactButton": "Contact us"
+    }
   },
   "contact": {
     "badge": "Contact",

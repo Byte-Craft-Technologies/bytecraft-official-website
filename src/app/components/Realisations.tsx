@@ -1,42 +1,44 @@
 'use client';
 
 import React, { useState } from 'react';
-
-const projects = [
-  {
-    id: 1,
-    title: "Le Béret Rouge",
-    category: "Site Web",
-    description: "Site vitrine élégant pour une entreprise française. Design moderne, responsive et optimisé pour le SEO.",
-    link: "https://leberetrouge.fr/",
-    technologies: ["WordPress", "PHP", "CSS"],
-    color: "from-red-500 to-orange-500",
-    icon: "🎩",
-  },
-  {
-    id: 2,
-    title: "Ojami",
-    category: "Application Mobile",
-    description: "Application mobile innovante disponible sur Google Play Store. Architecture robuste avec un backend sécurisé.",
-    link: "https://play.google.com/store/search?q=ojami&c=apps&hl=en",
-    technologies: ["React Native", "Java Spring Boot", "Spring Security"],
-    color: "from-green-500 to-emerald-500",
-    icon: "📱",
-  },
-  {
-    id: 3,
-    title: "Commune d'Avrankou",
-    category: "Site Web",
-    description: "Site officiel de la commune d'Avrankou. Interface moderne pour informer les citoyens et promouvoir la région.",
-    link: "https://hprogramming.github.io/avrankou",
-    technologies: ["React JS", "JavaScript", "CSS"],
-    color: "from-blue-500 to-indigo-500",
-    icon: "🏛️",
-  },
-];
+import { useTranslations } from 'next-intl';
 
 const Realisations = () => {
+  const t = useTranslations('realisations');
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+
+  const projects = [
+    {
+      id: 1,
+      titleKey: "project1.title",
+      categoryKey: "project1.category",
+      descriptionKey: "project1.description",
+      link: "https://leberetrouge.fr/",
+      technologies: ["WordPress", "PHP", "CSS"],
+      color: "from-red-500 to-orange-500",
+      icon: "🎩",
+    },
+    {
+      id: 2,
+      titleKey: "project2.title",
+      categoryKey: "project2.category",
+      descriptionKey: "project2.description",
+      link: "https://play.google.com/store/search?q=ojami&c=apps&hl=en",
+      technologies: ["React Native", "Java Spring Boot", "Spring Security"],
+      color: "from-green-500 to-emerald-500",
+      icon: "📱",
+    },
+    {
+      id: 3,
+      titleKey: "project3.title",
+      categoryKey: "project3.category",
+      descriptionKey: "project3.description",
+      link: "https://hprogramming.github.io/avrankou",
+      technologies: ["React JS", "JavaScript", "CSS"],
+      color: "from-blue-500 to-indigo-500",
+      icon: "🏛️",
+    },
+  ];
 
   return (
     <section className="py-24 bg-[#0a0a1a] relative overflow-hidden" id="realisations">
@@ -48,13 +50,13 @@ const Realisations = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-4">
-            Portfolio
+            {t('badge')}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Nos Réalisations
+            {t('title')}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Découvrez quelques-uns de nos projets qui témoignent de notre expertise et de notre engagement envers l&apos;excellence.
+            {t('description')}
           </p>
         </div>
 
@@ -96,7 +98,7 @@ const Realisations = () => {
                       px-3 py-1 rounded-full text-xs font-medium text-white
                       bg-gradient-to-r ${project.color}
                     `}>
-                      {project.category}
+                      {t(project.categoryKey)}
                     </span>
                   </div>
 
@@ -123,10 +125,10 @@ const Realisations = () => {
                 {/* Project Info */}
                 <div className="p-5">
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                    {project.title}
+                    {t(project.titleKey)}
                   </h3>
                   <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {project.description}
+                    {t(project.descriptionKey)}
                   </p>
 
                   {/* Technologies */}
@@ -143,7 +145,7 @@ const Realisations = () => {
 
                   {/* Link arrow */}
                   <div className="flex items-center text-cyan-400 text-sm font-medium">
-                    <span>Voir le projet</span>
+                    <span>{t('viewProject')}</span>
                     <svg
                       className={`w-4 h-4 ml-2 transition-transform duration-300 ${hoveredId === project.id ? 'translate-x-2' : ''}`}
                       fill="none"
@@ -161,12 +163,12 @@ const Realisations = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <p className="text-gray-400 mb-6">Vous avez un projet en tête ?</p>
+          <p className="text-gray-400 mb-6">{t('ctaText')}</p>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-primary text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
           >
-            Discutons de votre projet
+            {t('ctaButton')}
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
