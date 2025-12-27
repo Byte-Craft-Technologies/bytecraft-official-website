@@ -2,37 +2,38 @@
 
 import React, { useState, useEffect } from 'react';
 import ParticleBackground from './ParticleBackground';
-import NavBar from '../ui/Navbar';
 import Button from './button';
 import HeroVisual from './HeroVisual';
-
-const slides = [
-  {
-    title: "Propulsez votre Business",
-    subtitle: "vers de nouveaux sommets",
-    description: "Nous transformons vos idées en solutions numériques innovantes. Sites web, applications, et stratégies digitales sur mesure.",
-    visual: 'tech' as const,
-    link: "#contact",
-  },
-  {
-    title: "Applications Mobiles",
-    subtitle: "performantes & intuitives",
-    description: "Des applications mobiles modernes qui offrent une expérience utilisateur exceptionnelle sur iOS et Android.",
-    visual: 'mobile' as const,
-    link: "#services",
-  },
-  {
-    title: "Sites Web Modernes",
-    subtitle: "qui convertissent",
-    description: "Des sites web élégants, rapides et optimisés pour transformer vos visiteurs en clients fidèles.",
-    visual: 'web' as const,
-    link: "#realisations",
-  },
-];
+import { useTranslations } from 'next-intl';
 
 const Hero = () => {
+  const t = useTranslations('hero');
   const [activeSlide, setActiveSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+
+  const slides = [
+    {
+      titleKey: 'slide1Title',
+      subtitleKey: 'slide1Subtitle',
+      descriptionKey: 'slide1Description',
+      visual: 'tech' as const,
+      link: "#contact",
+    },
+    {
+      titleKey: 'slide2Title',
+      subtitleKey: 'slide2Subtitle',
+      descriptionKey: 'slide2Description',
+      visual: 'mobile' as const,
+      link: "#services",
+    },
+    {
+      titleKey: 'slide3Title',
+      subtitleKey: 'slide3Subtitle',
+      descriptionKey: 'slide3Description',
+      visual: 'web' as const,
+      link: "#realisations",
+    },
+  ];
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -43,7 +44,7 @@ const Hero = () => {
       }, 500);
     }, 6000);
     return () => clearInterval(slideInterval);
-  }, []);
+  }, [slides.length]);
 
   const goToSlide = (index: number) => {
     if (index !== activeSlide) {
@@ -66,9 +67,6 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0a1a] to-transparent pointer-events-none" />
 
-      {/* NavBar */}
-      <NavBar />
-
       {/* Hero Content */}
       <div className="relative z-10 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 w-full">
@@ -79,27 +77,27 @@ const Hero = () => {
                 {/* Badge */}
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-cyan-500/20 backdrop-blur-sm">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse mr-3"></span>
-                  <span className="text-cyan-300/90 text-sm font-medium">Disponible pour nouveaux projets</span>
+                  <span className="text-cyan-300/90 text-sm font-medium">{t('badge')}</span>
                 </div>
 
                 {/* Title */}
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  {currentSlide.title}
+                  {t('title1')}
                   <span className="block mt-2 bg-gradient-to-r from-cyan-400 via-primary to-cyan-400 bg-clip-text text-transparent">
-                    {currentSlide.subtitle}
+                    {t('title2')}
                   </span>
                 </h1>
 
                 {/* Description */}
                 <p className="text-lg text-gray-300 max-w-xl leading-relaxed">
-                  {currentSlide.description}
+                  {t('description')}
                 </p>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4">
                 <Button
-                  name="Démarrer un projet"
+                  name={t('cta1')}
                   link={currentSlide.link}
                   borderStyle="rounded-full px-8 py-4"
                   fontStyle="text-base font-semibold"
@@ -110,7 +108,7 @@ const Hero = () => {
                   href="#realisations"
                   className="group flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white hover:border-cyan-400/50 hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
                 >
-                  <span className="font-medium">Voir nos réalisations</span>
+                  <span className="font-medium">{t('cta2')}</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -121,15 +119,15 @@ const Hero = () => {
               <div className="flex gap-10 pt-8 border-t border-white/10">
                 <div>
                   <div className="text-3xl font-bold text-white">3</div>
-                  <div className="text-gray-400 text-sm">Projets livrés</div>
+                  <div className="text-gray-400 text-sm">{t('stats.projects')}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-white">100%</div>
-                  <div className="text-gray-400 text-sm">Clients satisfaits</div>
+                  <div className="text-gray-400 text-sm">{t('stats.satisfaction')}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-white">2</div>
-                  <div className="text-gray-400 text-sm">Années d&apos;expérience</div>
+                  <div className="text-gray-400 text-sm">{t('stats.experience')}</div>
                 </div>
               </div>
             </div>
