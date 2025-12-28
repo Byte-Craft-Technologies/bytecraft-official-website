@@ -13,9 +13,175 @@ body {
   background: white;
 }
 
+/**
+ * FUTURISTIC DESIGN SYSTEM UTILITIES
+ * Following strict 8pt grid, 4-size typography, 2-weight system, and 60/30/10 color rule
+ */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* NEON GLOW EFFECTS - Enhanced futuristic glow with proper 8pt spacing */
+  .glow-neon-cyan {
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.4), 0 0 48px rgba(34, 211, 238, 0.2);
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.5), 0 0 16px rgba(34, 211, 238, 0.3);
+  }
+
+  .glow-neon-blue {
+    box-shadow: 0 0 24px rgba(94, 161, 214, 0.4), 0 0 48px rgba(94, 161, 214, 0.2);
+    text-shadow: 0 0 8px rgba(94, 161, 214, 0.5), 0 0 16px rgba(94, 161, 214, 0.3);
+  }
+
+  .glow-neon-purple {
+    box-shadow: 0 0 24px rgba(167, 139, 250, 0.4), 0 0 48px rgba(167, 139, 250, 0.2);
+    text-shadow: 0 0 8px rgba(167, 139, 250, 0.5), 0 0 16px rgba(167, 139, 250, 0.3);
+  }
+
+  .glow-neon-pink {
+    box-shadow: 0 0 24px rgba(244, 114, 182, 0.4), 0 0 48px rgba(244, 114, 182, 0.2);
+    text-shadow: 0 0 8px rgba(244, 114, 182, 0.5), 0 0 16px rgba(244, 114, 182, 0.3);
+  }
+
+  /* TEXT GLOW EFFECTS - For text elements only */
+  .text-glow-cyan {
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.6),
+                 0 0 16px rgba(34, 211, 238, 0.4),
+                 0 0 24px rgba(34, 211, 238, 0.2);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 8px rgba(94, 161, 214, 0.6),
+                 0 0 16px rgba(94, 161, 214, 0.4),
+                 0 0 24px rgba(94, 161, 214, 0.2);
+  }
+
+  /* GRADIENT TEXT EFFECTS - Futuristic gradient text */
+  .text-gradient-neon {
+    background: linear-gradient(135deg, #22d3ee 0%, #5EA1D6 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-aurora {
+    background: linear-gradient(120deg, #5EA1D6 0%, #22d3ee 25%, #a78bfa 50%, #22d3ee 75%, #5EA1D6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: aurora 8s ease-in-out infinite;
+  }
+
+  .text-gradient-holographic {
+    background: linear-gradient(45deg, #22d3ee, #5EA1D6, #a78bfa, #f472b6, #22d3ee);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: aurora 8s ease-in-out infinite;
+  }
+
+  /* HOLOGRAPHIC EFFECT - Advanced futuristic card effect */
+  .holographic {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(34, 211, 238, 0.15),
+                0 16px 64px rgba(94, 161, 214, 0.1);
+  }
+
+  .holographic::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(45deg, #22d3ee, #5EA1D6, #a78bfa, #f472b6, #22d3ee);
+    background-size: 400% 400%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    animation: aurora 8s ease-in-out infinite;
+  }
+
+  /* SCANLINE EFFECT - Subtle CRT/retro-futuristic effect */
+  .scanlines {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.02) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  /* AURORA GRADIENT BACKGROUND - Animated gradient effect */
+  .bg-aurora {
+    background: linear-gradient(120deg, #5EA1D6 0%, #22d3ee 25%, #a78bfa 50%, #22d3ee 75%, #5EA1D6 100%);
+    background-size: 200% 200%;
+    animation: aurora 8s ease-in-out infinite;
+  }
+
+  /* SHIMMER EFFECT - For loading states or highlights */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s linear infinite;
+  }
+
+  /* ENHANCED GLASS MORPHISM - Following 8pt grid for blur values */
+  .glass-enhanced {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  /* NEON BORDER - Animated glowing border */
+  .border-neon {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(to right, #0a0a1a, #0a0a1a) padding-box,
+                linear-gradient(135deg, #22d3ee, #5EA1D6, #a78bfa) border-box;
+  }
+
+  .border-neon-animated {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(to right, #0a0a1a, #0a0a1a) padding-box,
+                linear-gradient(45deg, #22d3ee, #5EA1D6, #a78bfa, #f472b6, #22d3ee) border-box;
+    background-size: 400% 400%;
+    animation: aurora 8s ease-in-out infinite;
   }
 }
 

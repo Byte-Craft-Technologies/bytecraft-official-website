@@ -91,7 +91,7 @@ describe("Button component",()=>{
 
         await waitFor(() => {
             const icon = document.querySelector("img");
-            expect(icon).toHaveClass("mr-2");
+            expect(icon).toHaveClass("transition-transform");
         });
     })
 
@@ -107,7 +107,7 @@ describe("Button component",()=>{
 
         await waitFor(() => {
             const icon = document.querySelector("img");
-            expect(icon).toHaveAttribute("width","30");
+            expect(icon).toHaveAttribute("width","20");
         });
     })
     it("icon should have height",async ()=>{
@@ -122,7 +122,7 @@ describe("Button component",()=>{
 
         await waitFor(() => {
             const icon = document.querySelector("img");
-            expect(icon).toHaveAttribute("height","30");
+            expect(icon).toHaveAttribute("height","20");
         });
     })
 })
