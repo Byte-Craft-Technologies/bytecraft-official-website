@@ -3,6 +3,7 @@
     "home": "Accueil",
     "services": "Services",
     "realisations": "Réalisations",
+    "team": "Équipe",
     "faq": "FAQ",
     "contact": "Contact",
     "cta": "Demander un devis"
@@ -97,7 +98,7 @@
       "q1": "Quels types de projets réalisez-vous ?",
       "a1": "Nous développons des sites web, applications mobiles, systèmes backend et solutions IA. Du site vitrine à l'application complexe.",
       "q2": "Quelles sont vos technologies principales ?",
-      "a2": "Java/Spring Boot, React/Next.js, React Native, Python, et les outils cloud AWS, Docker, Vercel.",
+      "a2": "Java/Spring Boot, Angular, React/Next.js, React Native, Python, et les outils cloud AWS, Docker, Vercel.",
       "q3": "Comment se déroule un projet ?",
       "a3": "Analyse des besoins, proposition technique, développement en sprints agiles, tests et mise en production avec suivi.",
       "q4": "Quels sont vos délais moyens ?",
@@ -106,6 +107,25 @@
       "a5": "Oui, nous proposons des contrats de maintenance incluant mises à jour, corrections et support technique.",
       "q6": "Comment obtenir un devis ?",
       "a6": "Via notre formulaire de contact ou par email. Nous analysons votre besoin et vous envoyons une proposition sous 48h."
+    }
+  },
+  "team": {
+    "badge": "Notre Équipe",
+    "title": "Les experts derrière vos projets",
+    "description": "Une équipe passionnée de développeurs et designers prêts à transformer vos idées en solutions digitales innovantes.",
+    "members": {
+      "honore": {
+        "role": "Fullstack Developer & Co-fondateur",
+        "bio": "Docteur en évolution logicielle, il allie rigueur scientifique et expertise technique pour concevoir des solutions robustes et pérennes."
+      },
+      "donald": {
+        "role": "Frontend Developer & Co-fondateur",
+        "bio": "Spécialiste des interfaces modernes, il transforme les maquettes en expériences web et mobiles fluides et réactives."
+      },
+      "member3": {
+        "role": "UI/UX Designer",
+        "bio": "Créatrice d'interfaces élégantes et d'expériences utilisateur intuitives qui captivent et convertissent."
+      }
     }
   },
   "contact": {

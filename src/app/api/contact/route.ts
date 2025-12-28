@@ -2,7 +2,13 @@ import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import { validateContactForm } from '@/domain/usecases/validateContactForm';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error('RESEND_API_KEY is not configured');
+  }
+  return new Resend(apiKey);
+}
 
 export async function POST(request: Request) {
   try {
@@ -55,6 +61,7 @@ export async function POST(request: Request) {
     const budgetLabel = budget ? budgetLabels[currency]?.[budget] || budget : 'Non spécifié';
 
     // Send email to ByteCraft
+    const resend = getResendClient();
     const { error } = await resend.emails.send({
       from: 'ByteCraft Contact <onboarding@resend.dev>',
       to: ['bytecraft.technologies@gmail.com'],

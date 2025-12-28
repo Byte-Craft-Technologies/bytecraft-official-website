@@ -6,3 +6,4 @@ export * from './currencies';
 export * from './budgetRanges';
 export * from './services';
 export * from './carousel';
+export * from './team';

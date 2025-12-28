@@ -4,3 +4,4 @@
 
 export * from './contact';
 export * from './service';
+export * from './team';
