@@ -3,6 +3,7 @@
     "home": "Home",
     "services": "Services",
     "realisations": "Portfolio",
+    "team": "Team",
     "faq": "FAQ",
     "contact": "Contact",
     "cta": "Get a quote"
@@ -97,7 +98,7 @@
       "q1": "What types of projects do you work on?",
       "a1": "We develop websites, mobile applications, backend systems and AI solutions. From showcase sites to complex applications.",
       "q2": "What are your main technologies?",
-      "a2": "Java/Spring Boot, React/Next.js, React Native, Python, and cloud tools like AWS, Docker, Vercel.",
+      "a2": "Java/Spring Boot, Angular, React/Next.js, React Native, Python, and cloud tools like AWS, Docker, Vercel.",
       "q3": "How does a project work?",
       "a3": "Needs analysis, technical proposal, agile sprint development, testing and production deployment with follow-up.",
       "q4": "What are your average timelines?",
@@ -106,6 +107,25 @@
       "a5": "Yes, we offer maintenance contracts including updates, fixes and technical support.",
       "q6": "How to get a quote?",
       "a6": "Via our contact form or by email. We analyze your needs and send you a proposal within 48h."
+    }
+  },
+  "team": {
+    "badge": "Our Team",
+    "title": "The experts behind your projects",
+    "description": "A passionate team of developers and designers ready to transform your ideas into innovative digital solutions.",
+    "members": {
+      "honore": {
+        "role": "Fullstack Developer & Co-founder",
+        "bio": "PhD in Software Evolution, combining scientific rigor with technical expertise to deliver robust, future-proof solutions."
+      },
+      "donald": {
+        "role": "Frontend Developer & Co-founder",
+        "bio": "Modern interface specialist, turning designs into smooth, responsive web and mobile experiences."
+      },
+      "member3": {
+        "role": "UI/UX Designer",
+        "bio": "Creator of elegant interfaces and intuitive user experiences that captivate and convert."
+      }
     }
   },
   "contact": {

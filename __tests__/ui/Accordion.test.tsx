@@ -34,13 +34,21 @@ describe("Accordion", () => {
 
         const button = screen.getByText(/title 1/i);
         fireEvent.click(button);
+
+        // Wait for content to appear
+        await waitFor(() => {
+            expect(screen.getByText(/Content 1/i)).toBeInTheDocument();
+        });
+
+        // Click again to collapse
         fireEvent.click(button);
 
         expect(button).toHaveClass("font-bold","text-slate-600")
-        await waitFor(async () => {
-            const content = await screen.findByText(/Content 1/i);
-            expect(content).not.toBeInTheDocument();
-        });
+
+        // Wait for transition to complete and content to disappear
+        await waitFor(() => {
+            expect(screen.queryByText(/Content 1/i)).not.toBeInTheDocument();
+        }, { timeout: 500 });
     });
 
     it("collapse on click other item click", async () => {
@@ -49,11 +57,20 @@ describe("Accordion", () => {
         const button = screen.getByText(/title 2/i);
 
         fireEvent.click(button1);
+
+        // Wait for content 1 to appear
+        await waitFor(() => {
+            expect(screen.getByText(/Content 1/i)).toBeInTheDocument();
+        });
+
+        // Click on button 2
         fireEvent.click(button);
 
-        await waitFor(async () => {
-            const content = await screen.findByText(/Content 1/i);
-            expect(content).not.toBeInTheDocument();
-        });
+        // Wait for content 1 to disappear and content 2 to appear
+        await waitFor(() => {
+            expect(screen.queryByText(/Content 1/i)).not.toBeInTheDocument();
+        }, { timeout: 500 });
+
+        expect(screen.getByText(/Content 2/i)).toBeInTheDocument();
     });
 })

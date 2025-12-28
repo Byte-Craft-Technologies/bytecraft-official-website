@@ -1,11 +1,28 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { validateContactForm } from '@/domain/usecases/validateContactForm';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error('RESEND_API_KEY is not configured');
+  }
+  return new Resend(apiKey);
+}
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+
+    // Server-side validation (CRITICAL: never trust client-side validation alone)
+    const validation = validateContactForm(body);
+    if (!validation.valid) {
+      return NextResponse.json(
+        { error: 'Validation failed', details: validation.errors },
+        { status: 400 }
+      );
+    }
+
     const { name, email, phone, company, projectType, budget, currency, message } = body;
 
     // Map project types to readable names
@@ -44,6 +61,7 @@ export async function POST(request: Request) {
     const budgetLabel = budget ? budgetLabels[currency]?.[budget] || budget : 'Non spécifié';
 
     // Send email to ByteCraft
+    const resend = getResendClient();
     const { error } = await resend.emails.send({
       from: 'ByteCraft Contact <onboarding@resend.dev>',
       to: ['bytecraft.technologies@gmail.com'],
@@ -138,7 +156,9 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Resend error:', error);
+      }
       return NextResponse.json(
         { error: 'Failed to send email' },
         { status: 500 }
@@ -147,7 +167,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('API error:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('API error:', error);
+    }
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
