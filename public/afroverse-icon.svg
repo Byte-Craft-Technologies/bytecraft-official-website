@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- Background -->
+  <rect width="240" height="240" rx="52" fill="#1B0F38"/>
+  <!-- Outer tilted orbit -->
+  <ellipse cx="120" cy="120" rx="92" ry="36" fill="none" stroke="#D4A24C" stroke-width="3" stroke-opacity="0.5" transform="rotate(-22 120 120)"/>
+  <!-- Sphere wireframe -->
+  <circle cx="120" cy="120" r="68" fill="none" stroke="#D4A24C" stroke-width="4"/>
+  <ellipse cx="120" cy="120" rx="68" ry="22" fill="none" stroke="#D4A24C" stroke-width="2" stroke-opacity="0.55"/>
+  <ellipse cx="120" cy="120" rx="22" ry="68" fill="none" stroke="#D4A24C" stroke-width="2" stroke-opacity="0.55"/>
+  <ellipse cx="120" cy="120" rx="48" ry="68" fill="none" stroke="#D4A24C" stroke-width="2" stroke-opacity="0.3"/>
+  <!-- Africa silhouette — Al-Idrisi orientation (180° rotation baked in) -->
+  <path d="M 154 172 L 129 174 L 101 165 L 98 164 L 96 159 L 90 147 L 87 141 L 81 137 L 78 134 L 69 137 L 78 122 L 86 113 L 87 108 L 84 99 L 96 80 L 99 74 L 106 68 L 116 66 L 119 68 L 123 80 L 124 84 L 126 99 L 126 105 L 127 111 L 132 117 L 132 124 L 135 126 L 141 127 L 146 126 L 152 126 L 162 128 L 165 130 L 167 132 L 170 137 L 171 140 L 170 146 L 171 150 L 170 154 L 160 160 L 158 168 Z" fill="#D4A24C"/>
+  <!-- Madagascar — Al-Idrisi orientation (180° rotation baked in) -->
+  <path d="M 71 102 Q 62 96 61 84 Q 61 72 66 67 Q 72 68 75 78 Q 77 90 75 98 Q 74 102 71 102 Z" fill="#D4A24C"/>
+</svg>

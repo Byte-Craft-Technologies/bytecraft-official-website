@@ -118,7 +118,7 @@ const Hero = () => {
               {/* Stats */}
               <div className="flex gap-10 pt-8 border-t border-white/10">
                 <div>
-                  <div className="text-3xl font-bold text-white">3</div>
+                  <div className="text-3xl font-bold text-white">5</div>
                   <div className="text-gray-400 text-sm">{t('stats.projects')}</div>
                 </div>
                 <div>
@@ -126,7 +126,7 @@ const Hero = () => {
                   <div className="text-gray-400 text-sm">{t('stats.satisfaction')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white">2</div>
+                  <div className="text-3xl font-bold text-white">3</div>
                   <div className="text-gray-400 text-sm">{t('stats.experience')}</div>
                 </div>
               </div>

@@ -76,13 +76,23 @@
     },
     "project2": {
       "title": "Ojami",
-      "category": "Mobile App",
-      "description": "Innovative mobile application available on Google Play Store. Robust architecture with secure backend."
+      "category": "Web Application",
+      "description": "Modern web application with React JS frontend and secure Java Spring Boot backend. PostgreSQL database and robust architecture."
     },
     "project3": {
       "title": "Avrankou Municipality",
       "category": "Website",
       "description": "Official website of Avrankou municipality. Modern interface to inform citizens and promote the region."
+    },
+    "project4": {
+      "title": "Afroverse",
+      "category": "AI Web Platform",
+      "description": "Pan-Africanist cultural platform powered by GriotIA — the African heritage AI. History, civilisations and knowledge sourced from UNESCO and diaspora-founded media."
+    },
+    "project5": {
+      "title": "Vases d'Honneur",
+      "category": "Back-office & iOS",
+      "description": "Official app of Assemblée De Grâce church. Centralise your spiritual and community life: daily verse, sermons, worship calendar, event registration and pastoral appointments — wherever you are."
     }
   },
   "faq": {

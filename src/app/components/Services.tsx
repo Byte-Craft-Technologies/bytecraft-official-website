@@ -65,16 +65,23 @@ const Services = () => {
   ];
 
   const technologies = [
-    { name: 'Java EE', category: 'Backend' },
-    { name: 'Spring Boot', category: 'Backend' },
-    { name: 'Spring AI', category: 'AI' },
-    { name: 'Spring MVC', category: 'Backend' },
-    { name: 'Spring Security', category: 'Backend' },
-    { name: 'React Native', category: 'Mobile' },
     { name: 'React JS', category: 'Frontend' },
     { name: 'Next.js', category: 'Frontend' },
-    { name: 'WordPress', category: 'CMS' },
+    { name: 'React Native', category: 'Mobile' },
+    { name: 'Spring Boot', category: 'Backend' },
+    { name: 'Spring Security', category: 'Backend' },
+    { name: 'FastAPI', category: 'Backend' },
+    { name: 'Express TS', category: 'Backend' },
     { name: 'Python', category: 'Backend' },
+    { name: 'LangChain', category: 'AI' },
+    { name: 'Spring AI', category: 'AI' },
+    { name: 'PostgreSQL', category: 'Database' },
+    { name: 'Prisma', category: 'ORM' },
+    { name: 'Alembic', category: 'ORM' },
+    { name: 'Docker', category: 'DevOps' },
+    { name: 'Nginx', category: 'DevOps' },
+    { name: 'GitHub Actions', category: 'DevOps' },
+    { name: 'WordPress', category: 'CMS' },
   ];
 
   return (

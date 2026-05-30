@@ -76,13 +76,23 @@
     },
     "project2": {
       "title": "Ojami",
-      "category": "Application Mobile",
-      "description": "Application mobile innovante disponible sur Google Play Store. Architecture robuste avec un backend sécurisé."
+      "category": "Application Web",
+      "description": "Application web moderne avec frontend React JS et backend Java Spring Boot sécurisé. Base de données PostgreSQL et architecture robuste."
     },
     "project3": {
       "title": "Commune d'Avrankou",
       "category": "Site Web",
       "description": "Site officiel de la commune d'Avrankou. Interface moderne pour informer les citoyens et promouvoir la région."
+    },
+    "project4": {
+      "title": "Afroverse",
+      "category": "Plateforme Web IA",
+      "description": "Plateforme culturelle pan-africaniste propulsée par GriotIA — l'IA du patrimoine africain. Histoire, civilisations et savoirs sourcés depuis l'UNESCO et les médias de la diaspora."
+    },
+    "project5": {
+      "title": "Vases d'Honneur",
+      "category": "Back-office & iOS",
+      "description": "Application officielle de l'Assemblée De Grâce. Centralisez votre vie spirituelle et communautaire : verset du jour, sermons, calendrier des cultes, inscription aux événements et rendez-vous pastoraux — où que vous soyez."
     }
   },
   "faq": {
