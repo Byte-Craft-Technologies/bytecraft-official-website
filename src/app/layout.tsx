@@ -90,7 +90,7 @@ const jsonLd = {
   },
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'bytecraft.technologies@gmail.com',
+    email: 'contact@bytecrafttechnologie.com',
     contactType: 'customer service',
     availableLanguage: ['French', 'English'],
   },
