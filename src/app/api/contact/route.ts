@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     // Send email to ByteCraft
     const { error } = await resend.emails.send({
       from: 'ByteCraft Contact <onboarding@resend.dev>',
-      to: ['bytecraft.technologies@gmail.com'],
+      to: ['contact@bytecrafttechnologie.com'],
       replyTo: email,
       subject: `Nouvelle demande de contact - ${name}`,
       html: `

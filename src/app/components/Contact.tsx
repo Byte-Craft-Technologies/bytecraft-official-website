@@ -127,8 +127,8 @@ const Contact = () => {
                   📧
                 </div>
                 <h3 className="text-white font-semibold mb-1">{t('email')}</h3>
-                <a href="mailto:bytecraft.technologies@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                  bytecraft.technologies@gmail.com
+                <a href="mailto:contact@bytecrafttechnologie.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  contact@bytecrafttechnologie.com
                 </a>
               </div>
 
