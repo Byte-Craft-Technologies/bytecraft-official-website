@@ -2,36 +2,24 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import NavBar from "./ui/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('meta');
+  const locale = await getLocale();
+  const isEnglish = locale === 'en';
+
+  return {
   metadataBase: new URL('https://bytecraft-technologies.com'),
   title: {
-    default: "BYTECRAFT TECHNOLOGIES | Solutions Digitales Innovantes",
+    default: t('title'),
     template: "%s | BYTECRAFT TECHNOLOGIES",
   },
-  description: "Agence de développement web et mobile au Bénin. Création de sites web, applications mobiles, APIs et solutions IA sur mesure. Technologies: React, Next.js, Spring Boot, React Native.",
-  keywords: [
-    "développement web",
-    "développement mobile",
-    "application mobile",
-    "site web",
-    "React",
-    "Next.js",
-    "Spring Boot",
-    "React Native",
-    "agence digitale",
-    "Bénin",
-    "Porto-Novo",
-    "développeur",
-    "freelance",
-    "API",
-    "intelligence artificielle",
-    "IA",
-  ],
+  description: t('description'),
+  keywords: t.raw('keywords') as string[],
   authors: [{ name: "ByteCraft Technologies" }],
   creator: "ByteCraft Technologies",
   publisher: "ByteCraft Technologies",
@@ -48,25 +36,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'fr_FR',
-    alternateLocale: 'en_US',
+    locale: isEnglish ? 'en_US' : 'fr_FR',
+    alternateLocale: isEnglish ? 'fr_FR' : 'en_US',
     url: 'https://bytecraft-technologies.com',
     siteName: 'ByteCraft Technologies',
-    title: 'BYTECRAFT TECHNOLOGIES | Solutions Digitales Innovantes',
-    description: 'Agence de développement web et mobile au Bénin. Création de sites web, applications mobiles, APIs et solutions IA sur mesure.',
+    title: t('title'),
+    description: t('ogDescription'),
     images: [
       {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'ByteCraft Technologies - Solutions Digitales',
+        alt: t('ogAlt'),
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BYTECRAFT TECHNOLOGIES | Solutions Digitales Innovantes',
-    description: 'Agence de développement web et mobile au Bénin. Sites web, applications mobiles, APIs et solutions IA.',
+    title: t('title'),
+    description: t('twitterDescription'),
     images: ['/og-image.svg'],
     creator: '@bytecraft_tech',
   },
@@ -74,7 +62,8 @@ export const metadata: Metadata = {
     google: 'votre-code-google-search-console',
   },
   category: 'technology',
-};
+  };
+}
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -127,13 +116,18 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
+  const t = await getTranslations('meta');
+  const localizedJsonLd = {
+    ...jsonLd,
+    description: t('ogDescription'),
+  };
 
   return (
     <html lang={locale}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localizedJsonLd) }}
         />
       </head>
       <body className={inter.className}>

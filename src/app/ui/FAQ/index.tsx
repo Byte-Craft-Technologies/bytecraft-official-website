@@ -48,7 +48,7 @@ function FAQ() {
                                     src="/faq.svg"
                                     width={400}
                                     height={300}
-                                    alt="FAQ illustration"
+                                    alt={t('imageAlt')}
                                     className="w-full h-auto opacity-90"
                                 />
 

@@ -155,7 +155,7 @@ const Realisations = () => {
                       {project.iconImage ? (
                         <Image
                           src={project.iconImage}
-                          alt={project.titleKey}
+                          alt={t(project.titleKey)}
                           width={80}
                           height={80}
                           className="w-full h-full object-cover"

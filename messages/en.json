@@ -11,12 +11,12 @@
     "badge": "Available for new projects",
     "title1": "Transform your ideas into",
     "title2": "digital solutions",
-    "description": "We design and develop custom web and mobile applications to propel your business towards success.",
+    "description": "We design and build custom web and mobile applications to help your business succeed.",
     "cta1": "Start a project",
     "cta2": "View our work",
     "stats": {
       "projects": "Projects delivered",
-      "satisfaction": "Client satisfaction",
+      "satisfaction": "Satisfied clients",
       "experience": "Years of experience"
     }
   },
@@ -26,7 +26,7 @@
     "description": "From design to production, we support you at every stage of your digital project with an agile approach.",
     "web": {
       "title": "Web Development",
-      "description": "Modern, performant and responsive websites and web applications.",
+      "description": "Modern, fast, and responsive websites and web applications.",
       "details": ["Corporate & showcase sites", "Complex web applications", "E-commerce & marketplaces", "Dashboards & back-office"]
     },
     "mobile": {
@@ -42,12 +42,12 @@
     "ai": {
       "title": "Artificial Intelligence",
       "description": "AI solutions integration to automate and optimize your processes.",
-      "details": ["Intelligent chatbots", "Automation", "LLMs integration"]
+      "details": ["Intelligent chatbots", "Automation", "LLM integration"]
     },
     "consulting": {
       "title": "Consulting & Specifications",
       "description": "Support in defining and specifying your needs.",
-      "details": ["Needs analysis", "Requirements writing", "Technical architecture", "Technology choices"]
+      "details": ["Needs analysis", "Requirements documents", "Technical architecture", "Technology choices"]
     },
     "deploy": {
       "title": "Deployment & DevOps",
@@ -57,7 +57,17 @@
     "techTitle": "Technologies we master",
     "techDescription": "A modern and proven tech stack",
     "agileTitle": "Agile Methodology",
-    "agileDescription": "Sprints, iterations, continuous delivery",
+    "agileDescription": "Sprints, iterations, and continuous delivery",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "database": "Database",
+      "ai": "AI",
+      "orm": "ORM",
+      "devops": "DevOps",
+      "cms": "CMS"
+    },
     "ctaText": "Need a custom service?",
     "ctaButton": "Let's discuss your project"
   },
@@ -66,7 +76,7 @@
     "title": "Our Work",
     "description": "Discover some of our projects that demonstrate our expertise and commitment to excellence.",
     "viewProject": "View project",
-    "viewStore": "View on store",
+    "viewStore": "View on the App Store",
     "ctaText": "Have a project in mind?",
     "ctaButton": "Let's discuss your project",
     "project1": {
@@ -87,7 +97,7 @@
     "project4": {
       "title": "Afroverse",
       "category": "AI Web Platform",
-      "description": "Pan-Africanist cultural platform powered by GriotIA — the African heritage AI. History, civilisations and knowledge sourced from UNESCO and diaspora-founded media."
+      "description": "Pan-African cultural platform powered by GriotIA, an AI dedicated to African heritage. History, civilizations, and knowledge drawn from UNESCO and diaspora media."
     },
     "project5": {
       "title": "Vases d'Honneur",
@@ -103,19 +113,20 @@
     "contactTitle": "Have more questions?",
     "contactDescription": "Our team is here to help you",
     "contactButton": "Contact us",
+    "imageAlt": "FAQ illustration",
     "questions": {
-      "q1": "What types of projects do you work on?",
-      "a1": "We develop websites, mobile applications, backend systems and AI solutions. From showcase sites to complex applications.",
+      "q1": "What kinds of projects do you take on?",
+      "a1": "We build websites, mobile apps, backend systems, and AI solutions — from a simple showcase site to a complex product.",
       "q2": "What are your main technologies?",
       "a2": "Java/Spring Boot, React/Next.js, React Native, Python, and cloud tools like AWS, Docker, Vercel.",
       "q3": "How does a project work?",
-      "a3": "Needs analysis, technical proposal, agile sprint development, testing and production deployment with follow-up.",
-      "q4": "What are your average timelines?",
-      "a4": "From 2-4 weeks for a showcase site to several months for a complex application. We establish a precise schedule.",
+      "a3": "We start with a needs analysis and a technical proposal, then build in agile sprints, test, and deploy to production with follow-up.",
+      "q4": "What are your typical timelines?",
+      "a4": "From 2 to 4 weeks for a showcase site, and several months for a complex application. We set a clear schedule.",
       "q5": "Do you offer maintenance?",
-      "a5": "Yes, we offer maintenance contracts including updates, fixes and technical support.",
-      "q6": "How to get a quote?",
-      "a6": "Via our contact form or by email. We analyze your needs and send you a proposal within 48h."
+      "a5": "Yes. Our maintenance contracts include updates, bug fixes, and technical support.",
+      "q6": "How do I get a quote?",
+      "a6": "Through our contact form or by email. We review your needs and send a proposal within 48 hours."
     }
   },
   "contact": {
@@ -128,15 +139,20 @@
     "followUs": "Follow us",
     "responseTime": "Quick response",
     "responseTimeDesc": "Within 24 business hours",
+    "locationValue": "Paris, France",
     "form": {
       "name": "Full name",
+      "namePlaceholder": "John Doe",
       "email": "Email",
+      "emailPlaceholder": "john@example.com",
       "phone": "Phone",
+      "phonePlaceholder": "+1 202 555 0147",
       "company": "Company",
+      "companyPlaceholder": "Your company",
       "projectType": "Project type",
       "budget": "Estimated budget",
       "message": "Describe your project",
-      "messagePlaceholder": "Tell us about your project, your goals, your constraints...",
+      "messagePlaceholder": "Tell us about your project, your goals, and your constraints...",
       "submit": "Send my request",
       "sending": "Sending...",
       "successTitle": "Message sent!",
@@ -150,7 +166,21 @@
         "api": "Backend / API",
         "consulting": "Consulting",
         "other": "Other"
+      },
+      "currencies": {
+        "EUR": "Euro",
+        "USD": "US dollar",
+        "GBP": "Pound sterling",
+        "FCFA": "CFA franc"
       }
     }
+  },
+  "meta": {
+    "title": "BYTECRAFT TECHNOLOGIES | Innovative Digital Solutions",
+    "description": "Web and mobile development agency in Benin. Custom websites, mobile apps, APIs, and AI solutions. Technologies: React, Next.js, Spring Boot, React Native.",
+    "ogDescription": "Web and mobile development agency in Benin. Custom websites, mobile apps, APIs, and AI solutions.",
+    "twitterDescription": "Web and mobile development agency in Benin. Websites, mobile apps, APIs, and AI solutions.",
+    "ogAlt": "ByteCraft Technologies — Digital Solutions",
+    "keywords": ["web development", "mobile development", "mobile app", "website", "React", "Next.js", "Spring Boot", "React Native", "digital agency", "Benin", "Porto-Novo", "developer", "freelance", "API", "artificial intelligence", "AI"]
   }
 }

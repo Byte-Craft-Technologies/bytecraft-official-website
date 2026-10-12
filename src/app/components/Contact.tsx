@@ -17,10 +17,10 @@ const Contact = () => {
   });
 
   const currencies = [
-    { code: 'EUR', symbol: '€', name: 'Euro' },
-    { code: 'USD', symbol: '$', name: 'Dollar US' },
-    { code: 'GBP', symbol: '£', name: 'Pound Sterling' },
-    { code: 'FCFA', symbol: 'FCFA', name: 'Franc CFA' },
+    { code: 'EUR', symbol: '€' },
+    { code: 'USD', symbol: '$' },
+    { code: 'GBP', symbol: '£' },
+    { code: 'FCFA', symbol: 'FCFA' },
   ];
 
   const budgetRanges = {
@@ -154,7 +154,7 @@ const Contact = () => {
                   📍
                 </div>
                 <h3 className="text-white font-semibold mb-1">{t('location')}</h3>
-                <p className="text-gray-400">Paris, France</p>
+                <p className="text-gray-400">{t('locationValue')}</p>
               </div>
             </div>
 
@@ -219,7 +219,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                        placeholder="John Doe"
+                        placeholder={t('form.namePlaceholder')}
                       />
                     </div>
                     <div>
@@ -233,7 +233,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                        placeholder="john@example.com"
+                        placeholder={t('form.emailPlaceholder')}
                       />
                     </div>
                   </div>
@@ -249,7 +249,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                        placeholder="+33 123456789"
+                        placeholder={t('form.phonePlaceholder')}
                       />
                     </div>
                     <div>
@@ -262,7 +262,7 @@ const Contact = () => {
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                        placeholder="Your company"
+                        placeholder={t('form.companyPlaceholder')}
                       />
                     </div>
                   </div>
@@ -300,6 +300,7 @@ const Contact = () => {
                               key={curr.code}
                               type="button"
                               onClick={() => handleCurrencyChange(curr.code)}
+                              aria-label={t(`form.currencies.${curr.code}`)}
                               className={`px-2 py-1.5 rounded-lg text-xs font-medium transition-all ${
                                 formData.currency === curr.code
                                   ? 'bg-cyan-500 text-white'

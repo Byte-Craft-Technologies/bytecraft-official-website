@@ -8,7 +8,7 @@
     "cta": "Demander un devis"
   },
   "hero": {
-    "badge": "Disponible pour nouveaux projets",
+    "badge": "Disponible pour de nouveaux projets",
     "title1": "Transformez vos idées en",
     "title2": "solutions digitales",
     "description": "Nous concevons et développons des applications web et mobiles sur mesure pour propulser votre entreprise vers le succès.",
@@ -26,23 +26,23 @@
     "description": "De la conception à la mise en production, nous vous accompagnons à chaque étape de votre projet digital avec une approche agile.",
     "web": {
       "title": "Développement Web",
-      "description": "Sites web et applications web modernes, performants et responsive.",
-      "details": ["Sites vitrines & corporate", "Applications web complexes", "E-commerce & marketplaces", "Tableaux de bord & back-office"]
+      "description": "Sites web et applications web modernes, performants et adaptés à tous les écrans.",
+      "details": ["Sites vitrines et sites d'entreprise", "Applications web complexes", "E-commerce et places de marché", "Tableaux de bord et back-office"]
     },
     "mobile": {
       "title": "Applications Mobiles",
-      "description": "Applications natives et cross-platform pour iOS et Android.",
-      "details": ["Applications iOS & Android", "Cross-platform (React Native)", "Intégration APIs & services", "Push notifications & offline"]
+      "description": "Applications natives et multiplateformes pour iOS et Android.",
+      "details": ["Applications iOS et Android", "Multiplateforme (React Native)", "Intégration d'API et de services", "Notifications push et mode hors ligne"]
     },
     "backend": {
       "title": "Backend & APIs",
       "description": "Architectures robustes et APIs sécurisées pour vos applications.",
-      "details": ["APIs RESTful & GraphQL", "Microservices", "Bases de données", "Sécurité & authentification"]
+      "details": ["API REST et GraphQL", "Microservices", "Bases de données", "Sécurité et authentification"]
     },
     "ai": {
       "title": "Intelligence Artificielle",
       "description": "Intégration de solutions IA pour automatiser et optimiser vos processus.",
-      "details": ["Chatbots intelligents", "Automatisation", "Intégration LLMs"]
+      "details": ["Chatbots intelligents", "Automatisation", "Intégration de LLM"]
     },
     "consulting": {
       "title": "Conseil & Spécifications",
@@ -52,27 +52,37 @@
     "deploy": {
       "title": "Déploiement & DevOps",
       "description": "Mise en production et maintenance de vos applications.",
-      "details": ["Déploiement cloud", "CI/CD pipelines", "Maintenance & support"]
+      "details": ["Déploiement cloud", "Pipelines CI/CD", "Maintenance et support"]
     },
     "techTitle": "Technologies maîtrisées",
-    "techDescription": "Un stack technique moderne et éprouvé",
+    "techDescription": "Une stack technique moderne et éprouvée",
     "agileTitle": "Méthodologie Agile",
-    "agileDescription": "Sprints, itérations, livraisons continues",
+    "agileDescription": "Sprints, itérations et livraisons continues",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "database": "Base de données",
+      "ai": "IA",
+      "orm": "ORM",
+      "devops": "DevOps",
+      "cms": "CMS"
+    },
     "ctaText": "Besoin d'un service sur mesure ?",
     "ctaButton": "Discutons de votre projet"
   },
   "realisations": {
-    "badge": "Portfolio",
+    "badge": "Nos projets",
     "title": "Nos Réalisations",
     "description": "Découvrez quelques-uns de nos projets qui témoignent de notre expertise et de notre engagement envers l'excellence.",
     "viewProject": "Voir le projet",
-    "viewStore": "Voir sur le store",
+    "viewStore": "Voir sur l'App Store",
     "ctaText": "Vous avez un projet en tête ?",
     "ctaButton": "Discutons de votre projet",
     "project1": {
       "title": "Le Béret Rouge",
       "category": "Site Web",
-      "description": "Site vitrine élégant pour une entreprise française. Design moderne, responsive et optimisé pour le SEO."
+      "description": "Site vitrine élégant pour une entreprise française. Design moderne, adapté à tous les écrans et optimisé pour le référencement."
     },
     "project2": {
       "title": "Ojami",
@@ -87,11 +97,11 @@
     "project4": {
       "title": "Afroverse",
       "category": "Plateforme Web IA",
-      "description": "Plateforme culturelle pan-africaniste propulsée par GriotIA — l'IA du patrimoine africain. Histoire, civilisations et savoirs sourcés depuis l'UNESCO et les médias de la diaspora."
+      "description": "Plateforme culturelle pan-africaniste propulsée par GriotIA, l'IA du patrimoine africain. Histoire, civilisations et savoirs puisés auprès de l'UNESCO et des médias de la diaspora."
     },
     "project5": {
       "title": "Vases d'Honneur",
-      "category": "Back-office & iOS",
+      "category": "Back-office et iOS",
       "description": "Application officielle de l'Assemblée De Grâce. Centralisez votre vie spirituelle et communautaire : verset du jour, sermons, calendrier des cultes, inscription aux événements et rendez-vous pastoraux — où que vous soyez."
     }
   },
@@ -103,45 +113,51 @@
     "contactTitle": "Vous avez d'autres questions ?",
     "contactDescription": "Notre équipe est là pour vous aider",
     "contactButton": "Contactez-nous",
+    "imageAlt": "Illustration de la FAQ",
     "questions": {
       "q1": "Quels types de projets réalisez-vous ?",
-      "a1": "Nous développons des sites web, applications mobiles, systèmes backend et solutions IA. Du site vitrine à l'application complexe.",
+      "a1": "Nous développons des sites web, des applications mobiles, des systèmes backend et des solutions d'IA, du site vitrine à l'application complexe.",
       "q2": "Quelles sont vos technologies principales ?",
-      "a2": "Java/Spring Boot, React/Next.js, React Native, Python, et les outils cloud AWS, Docker, Vercel.",
+      "a2": "Java et Spring Boot, React et Next.js, React Native, Python, ainsi que les outils cloud AWS, Docker et Vercel.",
       "q3": "Comment se déroule un projet ?",
       "a3": "Analyse des besoins, proposition technique, développement en sprints agiles, tests et mise en production avec suivi.",
       "q4": "Quels sont vos délais moyens ?",
-      "a4": "De 2-4 semaines pour un site vitrine à plusieurs mois pour une application complexe. Nous établissons un planning précis.",
+      "a4": "De 2 à 4 semaines pour un site vitrine, et plusieurs mois pour une application complexe. Nous établissons un planning précis.",
       "q5": "Proposez-vous la maintenance ?",
-      "a5": "Oui, nous proposons des contrats de maintenance incluant mises à jour, corrections et support technique.",
+      "a5": "Oui, nous proposons des contrats de maintenance qui incluent les mises à jour, les corrections et le support technique.",
       "q6": "Comment obtenir un devis ?",
-      "a6": "Via notre formulaire de contact ou par email. Nous analysons votre besoin et vous envoyons une proposition sous 48h."
+      "a6": "Via notre formulaire de contact ou par e-mail. Nous analysons votre besoin et vous envoyons une proposition sous 48 h."
     }
   },
   "contact": {
     "badge": "Contact",
     "title": "Discutons de votre projet",
     "description": "Prêt à transformer vos idées en réalité ? Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.",
-    "email": "Email",
+    "email": "E-mail",
     "whatsapp": "WhatsApp",
     "location": "Localisation",
     "followUs": "Suivez-nous",
     "responseTime": "Réponse rapide",
-    "responseTimeDesc": "Sous 24h ouvrées",
+    "responseTimeDesc": "Sous 24 heures ouvrées",
+    "locationValue": "Paris, France",
     "form": {
       "name": "Nom complet",
-      "email": "Email",
+      "namePlaceholder": "Jean Dupont",
+      "email": "E-mail",
+      "emailPlaceholder": "jean.dupont@exemple.fr",
       "phone": "Téléphone",
+      "phonePlaceholder": "+33 6 12 34 56 78",
       "company": "Entreprise",
+      "companyPlaceholder": "Votre entreprise",
       "projectType": "Type de projet",
       "budget": "Budget estimé",
       "message": "Décrivez votre projet",
-      "messagePlaceholder": "Parlez-nous de votre projet, vos objectifs, vos contraintes...",
+      "messagePlaceholder": "Parlez-nous de votre projet, de vos objectifs et de vos contraintes...",
       "submit": "Envoyer ma demande",
       "sending": "Envoi en cours...",
       "successTitle": "Message envoyé !",
       "successMessage": "Nous vous répondrons dans les plus brefs délais.",
-      "error": "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement par email.",
+      "error": "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement par e-mail.",
       "select": "Sélectionnez...",
       "projectTypes": {
         "web": "Site Web",
@@ -150,7 +166,21 @@
         "api": "Backend / API",
         "consulting": "Conseil",
         "other": "Autre"
+      },
+      "currencies": {
+        "EUR": "Euro",
+        "USD": "Dollar américain",
+        "GBP": "Livre sterling",
+        "FCFA": "Franc CFA"
       }
     }
+  },
+  "meta": {
+    "title": "BYTECRAFT TECHNOLOGIES | Solutions digitales innovantes",
+    "description": "Agence de développement web et mobile au Bénin. Création de sites web, applications mobiles, API et solutions d'IA sur mesure. Technologies : React, Next.js, Spring Boot, React Native.",
+    "ogDescription": "Agence de développement web et mobile au Bénin. Création de sites web, applications mobiles, API et solutions d'IA sur mesure.",
+    "twitterDescription": "Agence de développement web et mobile au Bénin. Sites web, applications mobiles, API et solutions d'IA.",
+    "ogAlt": "ByteCraft Technologies — Solutions digitales",
+    "keywords": ["développement web", "développement mobile", "application mobile", "site web", "React", "Next.js", "Spring Boot", "React Native", "agence digitale", "Bénin", "Porto-Novo", "développeur", "freelance", "API", "intelligence artificielle", "IA"]
   }
 }

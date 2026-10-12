@@ -65,23 +65,23 @@ const Services = () => {
   ];
 
   const technologies = [
-    { name: 'React JS', category: 'Frontend' },
-    { name: 'Next.js', category: 'Frontend' },
-    { name: 'React Native', category: 'Mobile' },
-    { name: 'Spring Boot', category: 'Backend' },
-    { name: 'Spring Security', category: 'Backend' },
-    { name: 'FastAPI', category: 'Backend' },
-    { name: 'Express TS', category: 'Backend' },
-    { name: 'Python', category: 'Backend' },
-    { name: 'LangChain', category: 'AI' },
-    { name: 'Spring AI', category: 'AI' },
-    { name: 'PostgreSQL', category: 'Database' },
-    { name: 'Prisma', category: 'ORM' },
-    { name: 'Alembic', category: 'ORM' },
-    { name: 'Docker', category: 'DevOps' },
-    { name: 'Nginx', category: 'DevOps' },
-    { name: 'GitHub Actions', category: 'DevOps' },
-    { name: 'WordPress', category: 'CMS' },
+    { name: 'React JS', category: 'frontend' },
+    { name: 'Next.js', category: 'frontend' },
+    { name: 'React Native', category: 'mobile' },
+    { name: 'Spring Boot', category: 'backend' },
+    { name: 'Spring Security', category: 'backend' },
+    { name: 'FastAPI', category: 'backend' },
+    { name: 'Express TS', category: 'backend' },
+    { name: 'Python', category: 'backend' },
+    { name: 'LangChain', category: 'ai' },
+    { name: 'Spring AI', category: 'ai' },
+    { name: 'PostgreSQL', category: 'database' },
+    { name: 'Prisma', category: 'orm' },
+    { name: 'Alembic', category: 'orm' },
+    { name: 'Docker', category: 'devops' },
+    { name: 'Nginx', category: 'devops' },
+    { name: 'GitHub Actions', category: 'devops' },
+    { name: 'WordPress', category: 'cms' },
   ];
 
   return (
@@ -184,7 +184,7 @@ const Services = () => {
                   {tech.name}
                 </span>
                 <span className="ml-2 text-xs text-gray-500">
-                  {tech.category}
+                  {t(`categories.${tech.category}`)}
                 </span>
               </div>
             ))}
