@@ -12,23 +12,18 @@ const Contact = () => {
     company: '',
     projectType: '',
     budget: '',
-    currency: 'FCFA',
+    currency: 'EUR',
     message: '',
   });
 
   const currencies = [
-    { code: 'FCFA', symbol: 'FCFA', name: 'Franc CFA' },
     { code: 'EUR', symbol: '€', name: 'Euro' },
     { code: 'USD', symbol: '$', name: 'Dollar US' },
+    { code: 'GBP', symbol: '£', name: 'Pound Sterling' },
+    { code: 'FCFA', symbol: 'FCFA', name: 'Franc CFA' },
   ];
 
   const budgetRanges = {
-    FCFA: [
-      { value: 'small', label: '< 500 000 FCFA' },
-      { value: 'medium', label: '500 000 - 2 000 000 FCFA' },
-      { value: 'large', label: '2 000 000 - 5 000 000 FCFA' },
-      { value: 'enterprise', label: '> 5 000 000 FCFA' },
-    ],
     EUR: [
       { value: 'small', label: '< 800 €' },
       { value: 'medium', label: '800 - 3 000 €' },
@@ -40,6 +35,18 @@ const Contact = () => {
       { value: 'medium', label: '$850 - $3,200' },
       { value: 'large', label: '$3,200 - $8,500' },
       { value: 'enterprise', label: '> $8,500' },
+    ],
+    GBP: [
+      { value: 'small', label: '< 500 £' },
+      { value: 'medium', label: '500 £ - 2 000 £' },
+      { value: 'large', label: '2 000 £ - 5 000 £' },
+      { value: 'enterprise', label: '> 5 000 £' },
+    ],
+    FCFA: [
+      { value: 'small', label: '< 500 000 FCFA' },
+      { value: 'medium', label: '500 000 FCFA - 2 000 000 FCFA' },
+      { value: 'large', label: '2 000 000 FCFA - 5 000 000 FCFA' },
+      { value: 'enterprise', label: '> 5 000 000 FCFA' },
     ],
   };
 
@@ -82,7 +89,7 @@ const Contact = () => {
           company: '',
           projectType: '',
           budget: '',
-          currency: 'FCFA',
+          currency: 'EUR',
           message: '',
         });
       }, 5000);
@@ -147,7 +154,7 @@ const Contact = () => {
                   📍
                 </div>
                 <h3 className="text-white font-semibold mb-1">{t('location')}</h3>
-                <p className="text-gray-400">Porto-novo, Bénin</p>
+                <p className="text-gray-400">Paris, France</p>
               </div>
             </div>
 
@@ -242,7 +249,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                        placeholder="+229 00 00 00 00"
+                        placeholder="+33 123456789"
                       />
                     </div>
                     <div>
