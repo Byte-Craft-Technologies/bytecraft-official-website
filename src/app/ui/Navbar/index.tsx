@@ -25,8 +25,19 @@ export default function NavBar() {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        // The browser can restore the scroll position after the first paint,
+        // without firing a scroll event.
+        const frame = window.requestAnimationFrame(handleScroll);
+        const timer = window.setTimeout(handleScroll, 150);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.cancelAnimationFrame(frame);
+            window.clearTimeout(timer);
+        };
     }, []);
 
     const handleLinkClick = (key: string) => {
