@@ -14,11 +14,9 @@
     "description": "Nous concevons et développons des applications web et mobiles sur mesure pour propulser votre entreprise vers le succès.",
     "cta1": "Démarrer un projet",
     "cta2": "Voir nos réalisations",
-    "stats": {
-      "projects": "Projets livrés",
-      "satisfaction": "Clients satisfaits",
-      "experience": "Années d'expérience"
-    }
+    "experienceBefore": "Une expertise de ",
+    "experienceYears": "plus de 10 ans",
+    "experienceAfter": " au service de vos projets"
   },
   "services": {
     "badge": "Nos Services",

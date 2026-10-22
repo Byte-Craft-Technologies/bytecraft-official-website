@@ -14,11 +14,9 @@
     "description": "We design and build custom web and mobile applications to help your business succeed.",
     "cta1": "Start a project",
     "cta2": "View our work",
-    "stats": {
-      "projects": "Projects delivered",
-      "satisfaction": "Satisfied clients",
-      "experience": "Years of experience"
-    }
+    "experienceBefore": "",
+    "experienceYears": "Over 10 years",
+    "experienceAfter": " of expertise at the service of your projects"
   },
   "services": {
     "badge": "Our Services",
