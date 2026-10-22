@@ -115,20 +115,34 @@ const Hero = () => {
                 </a>
               </div>
 
-              {/* Stats */}
-              <div className="flex gap-10 pt-8 border-t border-white/10">
-                <div>
-                  <div className="text-3xl font-bold text-white">5</div>
-                  <div className="text-gray-400 text-sm">{t('stats.projects')}</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white">100%</div>
-                  <div className="text-gray-400 text-sm">{t('stats.satisfaction')}</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white">3</div>
-                  <div className="text-gray-400 text-sm">{t('stats.experience')}</div>
-                </div>
+              {/* Experience statement */}
+              <div className="flex items-center gap-5 pt-8 border-t border-white/10">
+                <svg
+                  aria-hidden="true"
+                  className="h-12 w-12 shrink-0 text-cyan-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M12 3 4.5 6v5.2c0 4.7 3.2 8 7.5 9.8 4.3-1.8 7.5-5.1 7.5-9.8V6L12 3Z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="m9 12 2 2 4-4"
+                  />
+                </svg>
+                <div className="h-12 w-0.5 shrink-0 bg-white/20" />
+                <p className="max-w-md text-base font-medium leading-relaxed text-gray-200">
+                  {t('experienceBefore')}
+                  <span className="text-cyan-400">{t('experienceYears')}</span>
+                  {t('experienceAfter')}
+                </p>
               </div>
             </div>
 
